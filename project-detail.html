@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail | Karabo Nkadimeng</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress-bar"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">KN</a>
+            </div>
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#projects" class="active">Projects</a></li>
+                    <li><a href="index.html#experience">Experience</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <div class="container">
+            <a href="index.html#projects" class="back-to-portfolio">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+            
+            <div class="project-header">
+                <h1 id="project-title">AI-Powered Data Analysis Tool</h1>
+                <div class="project-meta">
+                    <div class="project-meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span id="project-date">2024</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span id="project-version">v1.0.0</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span id="project-readtime">5 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-image-hero" id="project-image">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            
+            <div class="project-content-detail" id="project-content"></div>
+            
+            <div class="project-links-detail">
+                <a href="#" class="btn btn-primary" id="github-link" target="_blank">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+                <a href="#" class="btn btn-outline" id="demo-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2026 Karabo Nkadimeng. All rights reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/PROSCARA05" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/karabo-nkadimeng" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:knkadimeng914@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        if (darkModeToggle) {
+            const darkMode = localStorage.getItem('darkMode') === 'enabled';
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+            darkModeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                if (document.body.classList.contains('dark-mode')) {
+                    localStorage.setItem('darkMode', 'enabled');
+                    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                } else {
+                    localStorage.setItem('darkMode', 'disabled');
+                    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                }
+            });
+        }
+        
+        // Reading Progress Bar
+        const progressBar = document.querySelector('.reading-progress-bar');
+        if (progressBar) {
+            window.addEventListener('scroll', () => {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.scrollY;
+                const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
+                progressBar.style.width = `${Math.min(progress, 100)}%`;
+            });
+        }
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('back-to-top');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                backToTop.style.display = window.scrollY > 300 ? 'flex' : 'none';
+            });
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        
+        // Mobile Navigation
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        if (navToggle) {
+            navToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+            });
+        }
+        document.addEventListener('click', (e) => {
+            if (navMenu && navMenu.classList.contains('active') && 
+                !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Project Data
+        const projects = {
+            'ai-data-analysis': {
+                title: 'AI-Powered Data Analysis Tool',
+                date: '2024',
+                version: 'v1.0.0',
+                readtime: '5 min read',
+                github: 'https://github.com/PROSCARA05/ai-data-analysis',
+                demo: '#',
+                icon: 'fa-chart-line',
+                content: `
+                    <div class="project-section">
+                        <h2>Overview</h2>
+                        <p>The AI-Powered Data Analysis Tool is a comprehensive Python application designed to automate data cleaning, exploration, and machine learning model training. It provides an intuitive interface for data scientists and analysts to quickly gain insights from their datasets without writing complex code.</p>
+                    </div>
+                    <div class="project-section">
+                        <h2>Key Features</h2>
+                        <ul class="feature-list">
+                            <li>Automated data cleaning and preprocessing</li>
+                            <li>Interactive data visualization with matplotlib and seaborn</li>
+                            <li>Multiple machine learning models (Linear Regression, Random Forest, Decision Tree)</li>
+                            <li>Feature importance analysis for model interpretability</li>
+                            <li>Export results to CSV and JSON formats</li>
+                            <li>Batch processing for large datasets up to 1M rows</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h2>Technologies Used</h2>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python 3.9+</span>
+                            <span class="tech-badge">pandas</span>
+                            <span class="tech-badge">NumPy</span>
+                            <span class="tech-badge">scikit-learn</span>
+                            <span class="tech-badge">matplotlib</span>
+                            <span class="tech-badge">seaborn</span>
+                        </div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Code Example</h2>
+                        <div class="code-block"><pre>from data_analyzer import DataAnalyzer
+
+analyzer = DataAnalyzer()
+analyzer.load_data('dataset.csv')
+analyzer.clean_data()
+analyzer.explore_data()
+analyzer.visualize_data()
+model = analyzer.train_models(target_column='sales')
+prediction = analyzer.make_prediction(input_data)</pre></div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Results & Impact</h2>
+                        <p>The tool successfully processes datasets of up to 1 million rows, reducing analysis time by approximately 70% compared to manual methods. The Random Forest model achieves an average R² score of 0.85 on test data, providing reliable predictions for business decision-making.</p>
+                    </div>
+                `
+            },
+            'data-manipulation': {
+                title: 'Data Manipulation Toolkit',
+                date: '2024',
+                version: 'v1.0.0',
+                readtime: '4 min read',
+                github: 'https://github.com/PROSCARA05/data-manipulation-toolkit',
+                demo: '#',
+                icon: 'fa-database',
+                content: `
+                    <div class="project-section">
+                        <h2>Overview</h2>
+                        <p>A comprehensive Python toolkit for efficient data processing, offering 10+ utility functions for data manipulation, outlier detection, and automated reporting. Designed to streamline data preprocessing workflows.</p>
+                    </div>
+                    <div class="project-section">
+                        <h2>Key Features</h2>
+                        <ul class="feature-list">
+                            <li>CSV/JSON file loading and saving with validation</li>
+                            <li>Advanced filtering and querying using pandas</li>
+                            <li>Outlier detection (IQR and Z-score methods)</li>
+                            <li>Dataset merging and joining operations</li>
+                            <li>Automated statistical reporting with visualizations</li>
+                            <li>Transformation history logging for reproducibility</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h2>Technologies Used</h2>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">pandas</span>
+                            <span class="tech-badge">NumPy</span>
+                            <span class="tech-badge">JSON</span>
+                            <span class="tech-badge">datetime</span>
+                        </div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Code Example</h2>
+                        <div class="code-block"><pre>from data_manipulation_toolkit import DataManipulationToolkit
+
+toolkit = DataManipulationToolkit()
+
+df = toolkit.create_sample_dataset("sales_data", 1000)
+toolkit.filter_data("region == 'North' and sales > 5000")
+toolkit.add_computed_column("profit_margin", "df['profit'] / df['revenue'] * 100")
+
+report = toolkit.generate_statistics_report()
+toolkit.export_to_csv("processed_data.csv")</pre></div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Results & Impact</h2>
+                        <p>The toolkit reduces data preprocessing time by up to 60% and has been successfully used to process datasets from various domains including sales, customer analytics, and sensor data.</p>
+                    </div>
+                `
+            },
+            'calculator': {
+                title: 'Interactive Scientific Calculator',
+                date: '2024',
+                version: 'v2.0.0',
+                readtime: '3 min read',
+                github: 'https://github.com/PROSCARA05/scientific-calculator',
+                demo: '#',
+                icon: 'fa-calculator',
+                content: `
+                    <div class="project-section">
+                        <h2>Overview</h2>
+                        <p>A feature-rich console-based scientific calculator with 20+ mathematical functions, history management, and memory operations. Built to demonstrate Object-Oriented Programming principles and data structure implementations.</p>
+                    </div>
+                    <div class="project-section">
+                        <h2>Key Features</h2>
+                        <ul class="feature-list">
+                            <li>Basic arithmetic operations (+, -, *, /, ^, %)</li>
+                            <li>Advanced functions (trigonometry, logarithms, exponentials, factorials)</li>
+                            <li>Expression evaluation with proper order of operations</li>
+                            <li>Memory storage (M+, M-, MR, MC) for temporary values</li>
+                            <li>Calculation history with save/load to JSON functionality</li>
+                            <li>User-friendly interactive menu system</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h2>Technologies Used</h2>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">OOP</span>
+                            <span class="tech-badge">JSON</span>
+                            <span class="tech-badge">Math Library</span>
+                            <span class="tech-badge">collections.deque</span>
+                        </div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Code Example</h2>
+                        <div class="code-block"><pre>from interactive_calculator import InteractiveCalculatorApp
+
+app = InteractiveCalculatorApp()
+app.run()
+
+# Example session:
+# 1. Basic Operations: 2 + 3 = 5
+# 2. Advanced: sin(30) = 0.5
+# 3. Expression: (10 + 5) * 2 = 30
+# 4. Memory: Store result, then recall
+# 5. History: View all calculations</pre></div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Results & Impact</h2>
+                        <p>The calculator demonstrates strong understanding of OOP concepts, data structures, and user input validation. It serves as a portfolio piece showcasing clean code architecture and comprehensive error handling.</p>
+                    </div>
+                `
+            },
+            'portfolio': {
+                title: 'Personal Portfolio Website',
+                date: '2024',
+                version: 'v1.0.0',
+                readtime: '3 min read',
+                github: '#',
+                demo: 'index.html',
+                icon: 'fa-portrait',
+                content: `
+                    <div class="project-section">
+                        <h2>Overview</h2>
+                        <p>A modern, responsive portfolio website showcasing my skills, projects, and professional experience. Features include dark mode, interactive animations, and a fully responsive design that works on all devices.</p>
+                    </div>
+                    <div class="project-section">
+                        <h2>Key Features</h2>
+                        <ul class="feature-list">
+                            <li>Fully responsive design for mobile, tablet, and desktop</li>
+                            <li>Dark/Light mode toggle with localStorage persistence</li>
+                            <li>Typing animation for dynamic role display</li>
+                            <li>Interactive project filtering by category</li>
+                            <li>Skill search functionality</li>
+                            <li>Smooth scrolling and scroll-based animations</li>
+                            <li>Contact form with Formspree integration</li>
+                            <li>Reading progress bar and back-to-top button</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h2>Technologies Used</h2>
+                        <div class="tech-stack">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Font Awesome</span>
+                            <span class="tech-badge">Google Fonts</span>
+                        </div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Performance Optimizations</h2>
+                        <ul class="feature-list">
+                            <li>Lazy loading for images and content</li>
+                            <li>Minified CSS and JavaScript for faster loading</li>
+                            <li>Responsive images with proper sizing</li>
+                            <li>Intersection Observer for scroll animations</li>
+                            <li>Local storage for user preferences</li>
+                        </ul>
+                    </div>
+                `
+            }
+        };
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id') || 'ai-data-analysis';
+        const project = projects[projectId];
+        
+        if (project) {
+            document.getElementById('project-title').textContent = project.title;
+            document.getElementById('project-date').textContent = project.date;
+            document.getElementById('project-version').textContent = project.version;
+            document.getElementById('project-readtime').textContent = project.readtime;
+            document.getElementById('project-content').innerHTML = project.content;
+            document.getElementById('github-link').href = project.github;
+            document.getElementById('demo-link').href = project.demo;
+            document.title = project.title + ' | Karabo Nkadimeng';
+            
+            const iconElement = document.querySelector('#project-image i');
+            if (iconElement) iconElement.className = 'fas ' + project.icon;
+        }
+    </script>
+</body>
+</html>
