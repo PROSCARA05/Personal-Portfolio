@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 CONTACT INFORMATION
 -------------------
-Email: knkadimeng914@gmail.com
+Email: knkadimeng511@gmail.com
 Phone: 061 958 3664
 Location: Thembisa, 1632, South Africa
 LinkedIn: linkedin.com/in/karabo-nkadimeng
@@ -234,11 +234,11 @@ EDUCATION
 
 TECHNICAL SKILLS
 ----------------
-Programming: Python (85%), JavaScript (75%), C++ (70%)
+Programming: Python (85%), JavaScript (75%), C++ (75%), Java (70%)
 Web Development: HTML5 (90%), CSS3 (85%), Responsive Design (80%)
-AI & Emerging Tech: AI Concepts (75%), Data Handling (70%)
+AI & Emerging Tech: AI Concepts (75%), Machine Learning (70%), Data Handling (70%)
 Tools: Git, GitHub, VS Code, Microsoft 365, Azure, Google Cloud
-Libraries: Pandas, NumPy, scikit-learn
+Libraries: Pandas, NumPy, scikit-learn, Matplotlib
 
 EXPERIENCE
 ----------
@@ -250,10 +250,11 @@ EXPERIENCE
 
 PROJECTS
 --------
-1. AI-Powered Data Analysis Tool
-2. Data Manipulation Toolkit
-3. Interactive Scientific Calculator
-4. Personal Portfolio Website
+1. Personal Portfolio Website (Live)
+2. C++ Calculator Application
+3. TMF Judicators Choral System (In Progress)
+4. Python Data Handling Suite (3-in-1)
+5. Student Management System
 
 LANGUAGES
 ---------
@@ -461,9 +462,9 @@ Available upon request.`;
                 const filter = btn.getAttribute('data-filter');
                 
                 projects.forEach(project => {
-                    const category = project.getAttribute('data-category');
+                    const categories = project.getAttribute('data-category').split(' ');
                     
-                    if (filter === 'all' || category === filter) {
+                    if (filter === 'all' || categories.includes(filter)) {
                         project.style.display = 'block';
                         setTimeout(() => {
                             project.style.opacity = '1';
@@ -536,32 +537,6 @@ Available upon request.`;
                 const visibleBadges = category.querySelectorAll('.tech-badge[style*="display: inline-block"], .tech-badge:not([style*="display: none"])');
                 category.style.display = (visibleItems.length > 0 || visibleBadges.length > 0) ? 'block' : 'none';
             });
-        });
-    }
-    
-    // ============================================
-    // CONTACT FORM
-    // ============================================
-    const contactForm = document.getElementById('contact-form');
-    const formMessage = document.getElementById('form-message');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                formMessage.innerHTML = '<div class="success-message">✅ Thank you! Your message has been sent successfully.</div>';
-                contactForm.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
-                setTimeout(() => formMessage.innerHTML = '', 5000);
-            }, 1500);
         });
     }
     
