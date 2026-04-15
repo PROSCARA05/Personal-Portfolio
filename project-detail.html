@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Detail | Karabo Nkadimeng</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -46,7 +46,7 @@
             </a>
             
             <div class="project-header">
-                <h1 id="project-title">AI-Powered Data Analysis Tool</h1>
+                <h1 id="project-title">Project Detail</h1>
                 <div class="project-meta">
                     <div class="project-meta-item">
                         <i class="fas fa-calendar"></i>
@@ -64,16 +64,16 @@
             </div>
             
             <div class="project-image-hero" id="project-image">
-                <i class="fas fa-chart-line"></i>
+                <i class="fas fa-code"></i>
             </div>
             
             <div class="project-content-detail" id="project-content"></div>
             
             <div class="project-links-detail">
                 <a href="#" class="btn btn-primary" id="github-link" target="_blank">
-                    <i class="fab fa-github"></i> View Code
+                    <i class="fab fa-github"></i> View on GitHub
                 </a>
-                <a href="#" class="btn btn-outline" id="demo-link" target="_blank">
+                <a href="#" class="btn btn-outline" id="demo-link" target="_blank" style="display: none;">
                     <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
             </div>
@@ -89,7 +89,7 @@
                 <div class="footer-social">
                     <a href="https://github.com/PROSCARA05" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/karabo-nkadimeng" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="mailto:knkadimeng914@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="mailto:knkadimeng511@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
@@ -171,173 +171,13 @@
         
         // Project Data
         const projects = {
-            'ai-data-analysis': {
-                title: 'AI-Powered Data Analysis Tool',
-                date: '2024',
-                version: 'v1.0.0',
-                readtime: '5 min read',
-                github: 'https://github.com/PROSCARA05/ai-data-analysis',
-                demo: '#',
-                icon: 'fa-chart-line',
-                content: `
-                    <div class="project-section">
-                        <h2>Overview</h2>
-                        <p>The AI-Powered Data Analysis Tool is a comprehensive Python application designed to automate data cleaning, exploration, and machine learning model training. It provides an intuitive interface for data scientists and analysts to quickly gain insights from their datasets without writing complex code.</p>
-                    </div>
-                    <div class="project-section">
-                        <h2>Key Features</h2>
-                        <ul class="feature-list">
-                            <li>Automated data cleaning and preprocessing</li>
-                            <li>Interactive data visualization with matplotlib and seaborn</li>
-                            <li>Multiple machine learning models (Linear Regression, Random Forest, Decision Tree)</li>
-                            <li>Feature importance analysis for model interpretability</li>
-                            <li>Export results to CSV and JSON formats</li>
-                            <li>Batch processing for large datasets up to 1M rows</li>
-                        </ul>
-                    </div>
-                    <div class="project-section">
-                        <h2>Technologies Used</h2>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Python 3.9+</span>
-                            <span class="tech-badge">pandas</span>
-                            <span class="tech-badge">NumPy</span>
-                            <span class="tech-badge">scikit-learn</span>
-                            <span class="tech-badge">matplotlib</span>
-                            <span class="tech-badge">seaborn</span>
-                        </div>
-                    </div>
-                    <div class="project-section">
-                        <h2>Code Example</h2>
-                        <div class="code-block"><pre>from data_analyzer import DataAnalyzer
-
-analyzer = DataAnalyzer()
-analyzer.load_data('dataset.csv')
-analyzer.clean_data()
-analyzer.explore_data()
-analyzer.visualize_data()
-model = analyzer.train_models(target_column='sales')
-prediction = analyzer.make_prediction(input_data)</pre></div>
-                    </div>
-                    <div class="project-section">
-                        <h2>Results & Impact</h2>
-                        <p>The tool successfully processes datasets of up to 1 million rows, reducing analysis time by approximately 70% compared to manual methods. The Random Forest model achieves an average R² score of 0.85 on test data, providing reliable predictions for business decision-making.</p>
-                    </div>
-                `
-            },
-            'data-manipulation': {
-                title: 'Data Manipulation Toolkit',
-                date: '2024',
-                version: 'v1.0.0',
-                readtime: '4 min read',
-                github: 'https://github.com/PROSCARA05/data-manipulation-toolkit',
-                demo: '#',
-                icon: 'fa-database',
-                content: `
-                    <div class="project-section">
-                        <h2>Overview</h2>
-                        <p>A comprehensive Python toolkit for efficient data processing, offering 10+ utility functions for data manipulation, outlier detection, and automated reporting. Designed to streamline data preprocessing workflows.</p>
-                    </div>
-                    <div class="project-section">
-                        <h2>Key Features</h2>
-                        <ul class="feature-list">
-                            <li>CSV/JSON file loading and saving with validation</li>
-                            <li>Advanced filtering and querying using pandas</li>
-                            <li>Outlier detection (IQR and Z-score methods)</li>
-                            <li>Dataset merging and joining operations</li>
-                            <li>Automated statistical reporting with visualizations</li>
-                            <li>Transformation history logging for reproducibility</li>
-                        </ul>
-                    </div>
-                    <div class="project-section">
-                        <h2>Technologies Used</h2>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">pandas</span>
-                            <span class="tech-badge">NumPy</span>
-                            <span class="tech-badge">JSON</span>
-                            <span class="tech-badge">datetime</span>
-                        </div>
-                    </div>
-                    <div class="project-section">
-                        <h2>Code Example</h2>
-                        <div class="code-block"><pre>from data_manipulation_toolkit import DataManipulationToolkit
-
-toolkit = DataManipulationToolkit()
-
-df = toolkit.create_sample_dataset("sales_data", 1000)
-toolkit.filter_data("region == 'North' and sales > 5000")
-toolkit.add_computed_column("profit_margin", "df['profit'] / df['revenue'] * 100")
-
-report = toolkit.generate_statistics_report()
-toolkit.export_to_csv("processed_data.csv")</pre></div>
-                    </div>
-                    <div class="project-section">
-                        <h2>Results & Impact</h2>
-                        <p>The toolkit reduces data preprocessing time by up to 60% and has been successfully used to process datasets from various domains including sales, customer analytics, and sensor data.</p>
-                    </div>
-                `
-            },
-            'calculator': {
-                title: 'Interactive Scientific Calculator',
-                date: '2024',
-                version: 'v2.0.0',
-                readtime: '3 min read',
-                github: 'https://github.com/PROSCARA05/scientific-calculator',
-                demo: '#',
-                icon: 'fa-calculator',
-                content: `
-                    <div class="project-section">
-                        <h2>Overview</h2>
-                        <p>A feature-rich console-based scientific calculator with 20+ mathematical functions, history management, and memory operations. Built to demonstrate Object-Oriented Programming principles and data structure implementations.</p>
-                    </div>
-                    <div class="project-section">
-                        <h2>Key Features</h2>
-                        <ul class="feature-list">
-                            <li>Basic arithmetic operations (+, -, *, /, ^, %)</li>
-                            <li>Advanced functions (trigonometry, logarithms, exponentials, factorials)</li>
-                            <li>Expression evaluation with proper order of operations</li>
-                            <li>Memory storage (M+, M-, MR, MC) for temporary values</li>
-                            <li>Calculation history with save/load to JSON functionality</li>
-                            <li>User-friendly interactive menu system</li>
-                        </ul>
-                    </div>
-                    <div class="project-section">
-                        <h2>Technologies Used</h2>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">OOP</span>
-                            <span class="tech-badge">JSON</span>
-                            <span class="tech-badge">Math Library</span>
-                            <span class="tech-badge">collections.deque</span>
-                        </div>
-                    </div>
-                    <div class="project-section">
-                        <h2>Code Example</h2>
-                        <div class="code-block"><pre>from interactive_calculator import InteractiveCalculatorApp
-
-app = InteractiveCalculatorApp()
-app.run()
-
-# Example session:
-# 1. Basic Operations: 2 + 3 = 5
-# 2. Advanced: sin(30) = 0.5
-# 3. Expression: (10 + 5) * 2 = 30
-# 4. Memory: Store result, then recall
-# 5. History: View all calculations</pre></div>
-                    </div>
-                    <div class="project-section">
-                        <h2>Results & Impact</h2>
-                        <p>The calculator demonstrates strong understanding of OOP concepts, data structures, and user input validation. It serves as a portfolio piece showcasing clean code architecture and comprehensive error handling.</p>
-                    </div>
-                `
-            },
             'portfolio': {
                 title: 'Personal Portfolio Website',
                 date: '2024',
                 version: 'v1.0.0',
                 readtime: '3 min read',
-                github: '#',
-                demo: 'index.html',
+                github: 'https://github.com/PROSCARA05/PROSCARA05.github.io',
+                demo: 'https://proscara05.github.io',
                 icon: 'fa-portrait',
                 content: `
                     <div class="project-section">
@@ -365,24 +205,318 @@ app.run()
                             <span class="tech-badge">JavaScript</span>
                             <span class="tech-badge">Font Awesome</span>
                             <span class="tech-badge">Google Fonts</span>
+                            <span class="tech-badge">Formspree</span>
                         </div>
                     </div>
                     <div class="project-section">
-                        <h2>Performance Optimizations</h2>
+                        <h2>Links</h2>
+                        <p><i class="fab fa-github"></i> <a href="https://github.com/PROSCARA05/PROSCARA05.github.io" target="_blank">View Source Code on GitHub</a></p>
+                        <p><i class="fas fa-external-link-alt"></i> <a href="https://proscara05.github.io" target="_blank">View Live Demo</a></p>
+                    </div>
+                `
+            },
+            'cpp-calculator': {
+                title: 'C++ Calculator Application',
+                date: '2024',
+                version: 'v1.0.0',
+                readtime: '3 min read',
+                github: 'https://github.com/PROSCARA05/C-Calculator-Application',
+                demo: null,
+                icon: 'fa-calculator',
+                content: `
+                    <div class="project-section">
+                        <h2>Overview</h2>
+                        <p>A console-based calculator application built with C++ that performs basic arithmetic operations. The program features a clean, user-friendly interface with input validation and error handling.</p>
+                    </div>
+                    <div class="project-section">
+                        <h2>Key Features</h2>
                         <ul class="feature-list">
-                            <li>Lazy loading for images and content</li>
-                            <li>Minified CSS and JavaScript for faster loading</li>
-                            <li>Responsive images with proper sizing</li>
-                            <li>Intersection Observer for scroll animations</li>
-                            <li>Local storage for user preferences</li>
+                            <li>Basic arithmetic operations (addition, subtraction, multiplication, division)</li>
+                            <li>User-friendly console interface with menu system</li>
+                            <li>Input validation to prevent errors</li>
+                            <li>Division by zero protection</li>
+                            <li>Continuous calculation option (loop until user exits)</li>
+                            <li>Clean and well-commented code structure</li>
                         </ul>
+                    </div>
+                    <div class="project-section">
+                        <h2>Technologies Used</h2>
+                        <div class="tech-stack">
+                            <span class="tech-badge">C++</span>
+                            <span class="tech-badge">Standard I/O</span>
+                            <span class="tech-badge">Functions</span>
+                            <span class="tech-badge">Control Structures</span>
+                            <span class="tech-badge">Error Handling</span>
+                        </div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Code Example</h2>
+                        <div class="code-block"><pre>#include &lt;iostream&gt;
+using namespace std;
+
+void displayMenu() {
+    cout << "\\n=== CALCULATOR MENU ===" << endl;
+    cout << "1. Addition (+)" << endl;
+    cout << "2. Subtraction (-)" << endl;
+    cout << "3. Multiplication (*)" << endl;
+    cout << "4. Division (/)" << endl;
+    cout << "5. Exit" << endl;
+    cout << "========================" << endl;
+}
+
+double add(double a, double b) { return a + b; }
+double subtract(double a, double b) { return a - b; }
+double multiply(double a, double b) { return a * b; }
+double divide(double a, double b) {
+    if (b == 0) throw "Error: Division by zero!";
+    return a / b;
+}</pre></div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Links</h2>
+                        <p><i class="fab fa-github"></i> <a href="https://github.com/PROSCARA05/C-Calculator-Application" target="_blank">View Source Code on GitHub</a></p>
+                    </div>
+                `
+            },
+            'tmf-choral': {
+                title: 'TMF Judicators Choral System',
+                date: '2024',
+                version: 'v1.0.0',
+                readtime: '4 min read',
+                github: null,
+                demo: 'https://proscara05.github.io/TMF-Judicators-Choral-System/',
+                icon: 'fa-music',
+                content: `
+                    <div class="project-section">
+                        <h2>Overview</h2>
+                        <p>A comprehensive web-based choral management system designed for TMF Judicators. The platform provides member directory management, event scheduling, media gallery, and communication tools for choir administration.</p>
+                        <div class="status-banner">
+                            <i class="fas fa-clock"></i> <strong>Status: In Progress</strong> - This project is actively being developed. New features are being added regularly!
+                        </div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Current Features</h2>
+                        <ul class="feature-list">
+                            <li>Member directory with profiles and contact information</li>
+                            <li>Event calendar and scheduling system</li>
+                            <li>Media gallery for photos and videos</li>
+                            <li>Announcements and news section</li>
+                            <li>Responsive design for all devices</li>
+                            <li>Intuitive navigation and user interface</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h2>Planned Features</h2>
+                        <ul class="feature-list">
+                            <li>Member login and authentication system</li>
+                            <li>Attendance tracking for rehearsals and events</li>
+                            <li>Sheet music library and resource section</li>
+                            <li>Admin dashboard for content management</li>
+                            <li>Email notification system</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h2>Technologies Used</h2>
+                        <div class="tech-stack">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Responsive Design</span>
+                            <span class="tech-badge">Font Awesome</span>
+                            <span class="tech-badge">Google Fonts</span>
+                        </div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Links</h2>
+                        <p><i class="fas fa-external-link-alt"></i> <a href="https://proscara05.github.io/TMF-Judicators-Choral-System/" target="_blank">View Live Demo (Work in Progress)</a></p>
+                        <p><i class="fas fa-lock"></i> <em>Source code available upon request</em></p>
+                    </div>
+                `
+            },
+            'python-data-handling': {
+                title: 'Python Data Handling Suite',
+                date: '2024',
+                version: 'v1.0.0',
+                readtime: '6 min read',
+                github: 'https://github.com/PROSCARA05/Python-Data-Handling-Projects',
+                demo: null,
+                icon: 'fa-chart-bar',
+                content: `
+                    <div class="project-section">
+                        <h2>Overview</h2>
+                        <p>A comprehensive collection of three Python data handling projects demonstrating practical applications of data analysis, inventory management, and student grade tracking.</p>
+                    </div>
+                    <div class="project-section">
+                        <h2>Project 1: Data Analysis Tool</h2>
+                        <p>Automated data analysis tool for processing and visualizing datasets.</p>
+                        <ul class="feature-list">
+                            <li>Load and parse CSV/JSON data files</li>
+                            <li>Statistical analysis (mean, median, mode, standard deviation)</li>
+                            <li>Data visualization with matplotlib</li>
+                            <li>Export analysis reports to text files</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h2>Project 2: Inventory Management System</h2>
+                        <p>Complete inventory tracking system for small businesses.</p>
+                        <ul class="feature-list">
+                            <li>Add, update, and delete products</li>
+                            <li>Stock level tracking with low stock alerts</li>
+                            <li>Sales and purchase recording</li>
+                            <li>Generate inventory reports</li>
+                            <li>Data persistence using JSON/CSV files</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h2>Project 3: Student Grade Manager</h2>
+                        <p>Academic grade tracking and analysis system.</p>
+                        <ul class="feature-list">
+                            <li>Student record management</li>
+                            <li>Grade entry for multiple subjects</li>
+                            <li>GPA calculation</li>
+                            <li>Performance analytics and trends</li>
+                            <li>Generate progress reports</li>
+                            <li>Export data to various formats</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h2>Technologies Used</h2>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python 3.9+</span>
+                            <span class="tech-badge">pandas</span>
+                            <span class="tech-badge">NumPy</span>
+                            <span class="tech-badge">matplotlib</span>
+                            <span class="tech-badge">JSON</span>
+                            <span class="tech-badge">CSV</span>
+                            <span class="tech-badge">File I/O</span>
+                            <span class="tech-badge">OOP</span>
+                        </div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Code Example</h2>
+                        <div class="code-block"><pre># Data Analysis Tool Example
+import pandas as pd
+import matplotlib.pyplot as plt
+
+class DataAnalyzer:
+    def __init__(self, filepath):
+        self.data = pd.read_csv(filepath)
+    
+    def get_summary(self):
+        return self.data.describe()
+    
+    def plot_distribution(self, column):
+        plt.hist(self.data[column])
+        plt.title(f'Distribution of {column}')
+        plt.show()
+
+# Inventory Management Example
+class InventorySystem:
+    def __init__(self):
+        self.products = {}
+    
+    def add_product(self, name, quantity, price):
+        self.products[name] = {'quantity': quantity, 'price': price}
+    
+    def check_low_stock(self, threshold=10):
+        return [p for p, d in self.products.items() if d['quantity'] < threshold]</pre></div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Links</h2>
+                        <p><i class="fab fa-github"></i> <a href="https://github.com/PROSCARA05/Python-Data-Handling-Projects" target="_blank">View Source Code on GitHub</a></p>
+                    </div>
+                `
+            },
+            'student-management': {
+                title: 'Student Management System',
+                date: '2024',
+                version: 'v1.0.0',
+                readtime: '4 min read',
+                github: 'https://github.com/PROSCARA05/Student-Management-System',
+                demo: null,
+                icon: 'fa-user-graduate',
+                content: `
+                    <div class="project-section">
+                        <h2>Overview</h2>
+                        <p>A comprehensive Java-based console application for managing student records, courses, and academic performance. The system demonstrates object-oriented programming principles with file-based data persistence.</p>
+                    </div>
+                    <div class="project-section">
+                        <h2>Key Features</h2>
+                        <ul class="feature-list">
+                            <li>Add, view, update, and delete student records</li>
+                            <li>Course enrollment and management system</li>
+                            <li>Grade entry and GPA calculation</li>
+                            <li>File I/O for data persistence (automatic save/load)</li>
+                            <li>Search and filter students by ID, name, or course</li>
+                            <li>Generate student transcripts and performance reports</li>
+                            <li>Input validation and comprehensive error handling</li>
+                            <li>Interactive console menu system</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h2>Technologies Used</h2>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Java</span>
+                            <span class="tech-badge">OOP</span>
+                            <span class="tech-badge">File I/O</span>
+                            <span class="tech-badge">Collections Framework</span>
+                            <span class="tech-badge">Serialization</span>
+                            <span class="tech-badge">Exception Handling</span>
+                        </div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Code Example</h2>
+                        <div class="code-block"><pre>public class StudentManagementSystem {
+    private ArrayList&lt;Student&gt; students;
+    private ArrayList&lt;Course&gt; courses;
+    
+    public void addStudent(Student student) {
+        students.add(student);
+        saveToFile();
+        System.out.println("Student added successfully!");
+    }
+    
+    public void enrollStudentInCourse(String studentId, String courseCode) {
+        Student student = findStudentById(studentId);
+        Course course = findCourseByCode(courseCode);
+        if (student != null && course != null) {
+            student.enrollCourse(course);
+            saveToFile();
+            System.out.println("Student enrolled in " + course.getName());
+        }
+    }
+    
+    public double calculateGPA(String studentId) {
+        Student student = findStudentById(studentId);
+        if (student != null) {
+            return student.calculateGPA();
+        }
+        return 0.0;
+    }
+}</pre></div>
+                    </div>
+                    <div class="project-section">
+                        <h2>Learning Outcomes</h2>
+                        <p>This project demonstrates proficiency in:</p>
+                        <ul class="feature-list">
+                            <li>Object-Oriented Programming (encapsulation, inheritance, polymorphism)</li>
+                            <li>Data structures using Java Collections Framework</li>
+                            <li>File I/O operations for data persistence</li>
+                            <li>Exception handling and input validation</li>
+                            <li>Console-based user interface design</li>
+                            <li>Clean code architecture and documentation</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h2>Links</h2>
+                        <p><i class="fab fa-github"></i> <a href="https://github.com/PROSCARA05/Student-Management-System" target="_blank">View Source Code on GitHub</a></p>
                     </div>
                 `
             }
         };
         
         const urlParams = new URLSearchParams(window.location.search);
-        const projectId = urlParams.get('id') || 'ai-data-analysis';
+        const projectId = urlParams.get('id') || 'portfolio';
         const project = projects[projectId];
         
         if (project) {
@@ -391,8 +525,23 @@ app.run()
             document.getElementById('project-version').textContent = project.version;
             document.getElementById('project-readtime').textContent = project.readtime;
             document.getElementById('project-content').innerHTML = project.content;
-            document.getElementById('github-link').href = project.github;
-            document.getElementById('demo-link').href = project.demo;
+            
+            const githubBtn = document.getElementById('github-link');
+            if (project.github) {
+                githubBtn.href = project.github;
+                githubBtn.style.display = 'inline-flex';
+            } else {
+                githubBtn.style.display = 'none';
+            }
+            
+            const demoBtn = document.getElementById('demo-link');
+            if (project.demo) {
+                demoBtn.style.display = 'inline-flex';
+                demoBtn.href = project.demo;
+            } else {
+                demoBtn.style.display = 'none';
+            }
+            
             document.title = project.title + ' | Karabo Nkadimeng';
             
             const iconElement = document.querySelector('#project-image i');
