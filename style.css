@@ -118,14 +118,16 @@ body.dark-mode .project-section {
     border-color: #334155;
 }
 
-body.dark-mode .skill-bar {
-    background-color: #334155;
-}
-
-body.dark-mode .tech-badge {
+body.dark-mode .skill-badge {
     background-color: #334155;
     color: #60a5fa;
     border-color: #475569;
+}
+
+body.dark-mode .skill-badge:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
 body.dark-mode .filter-btn {
@@ -766,7 +768,7 @@ section {
 }
 
 /* ============================================ */
-/* SKILLS SECTION */
+/* SKILLS SECTION - UPDATED WITHOUT BARS */
 /* ============================================ */
 .skills {
     background: var(--light);
@@ -824,60 +826,31 @@ body.dark-mode .skills {
     font-size: 22px;
 }
 
-.skills-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-}
-
-.skill-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    color: var(--dark);
-    font-weight: 500;
-    font-size: 15px;
-}
-
-.skill-bar {
-    height: 8px;
-    background: #e2e8f0;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.skill-progress {
-    height: 100%;
-    background: var(--gradient);
-    border-radius: 10px;
-    width: 0;
-    transition: width 1.5s ease;
-}
-
-.tech-stack {
+/* New Skills Badges Layout */
+.skills-badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
+    gap: 12px;
 }
 
-.tech-badge {
+.skill-badge {
     background: var(--light);
-    padding: 10px 22px;
+    padding: 12px 24px;
     border-radius: 12px;
     color: var(--primary-color);
     font-weight: 500;
     transition: var(--transition);
-    cursor: pointer;
-    font-size: 14px;
+    cursor: default;
+    font-size: 15px;
     border: 1px solid #e2e8f0;
 }
 
-.tech-badge:hover {
+.skill-badge:hover {
     background: var(--primary-color);
     color: var(--white);
     transform: translateY(-3px);
     border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
 }
 
 /* ============================================ */
@@ -996,15 +969,24 @@ body.dark-mode .skills {
     color: var(--primary-color);
     font-weight: 500;
     transition: var(--transition);
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
     font-size: 14px;
 }
 
+.project-link i {
+    font-size: 14px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .project-link:hover {
     color: var(--primary-dark);
-    gap: 10px;
+    gap: 8px;
 }
 
 /* ============================================ */
@@ -1458,6 +1440,21 @@ body.dark-mode .contact {
     flex-wrap: wrap;
 }
 
+.project-links-detail .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.project-links-detail .btn i {
+    font-size: 16px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .project-links-detail .btn-outline {
     background: transparent;
     color: var(--primary-color) !important;
@@ -1771,5 +1768,14 @@ body.dark-mode .project-links-detail .btn-outline:hover {
         width: 100%;
         text-align: center;
         justify-content: center;
+    }
+    
+    .skills-badges {
+        gap: 8px;
+    }
+    
+    .skill-badge {
+        padding: 10px 18px;
+        font-size: 14px;
     }
 }
