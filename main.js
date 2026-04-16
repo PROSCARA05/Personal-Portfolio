@@ -234,9 +234,9 @@ EDUCATION
 
 TECHNICAL SKILLS
 ----------------
-Programming: Python (85%), JavaScript (75%), C++ (75%), Java (70%)
-Web Development: HTML5 (90%), CSS3 (85%), Responsive Design (80%)
-AI & Emerging Tech: AI Concepts (75%), Machine Learning (70%), Data Handling (70%)
+Programming: Python, C++, JavaScript
+Web Development: HTML5, CSS3, Responsive Design
+AI & Emerging Tech: AI Concepts, Machine Learning, Data Handling, Cloud Fundamentals
 Tools: Git, GitHub, VS Code, Microsoft 365, Azure, Google Cloud
 Libraries: Pandas, NumPy, scikit-learn, Matplotlib
 
@@ -254,7 +254,6 @@ PROJECTS
 2. C++ Calculator Application
 3. TMF Judicators Choral System (In Progress)
 4. Python Data Handling Suite (3-in-1)
-5. Student Management System
 
 LANGUAGES
 ---------
@@ -371,22 +370,6 @@ Available upon request.`;
     }
     
     // ============================================
-    // SKILL BARS ANIMATION
-    // ============================================
-    const skillBars = document.querySelectorAll('.skill-progress');
-    const skillObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const bar = entry.target;
-                const width = bar.getAttribute('data-width');
-                bar.style.width = `${width}%`;
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    skillBars.forEach(bar => skillObserver.observe(bar));
-    
-    // ============================================
     // COUNTER ANIMATION
     // ============================================
     const counters = document.querySelectorAll('.stat-number');
@@ -483,59 +466,23 @@ Available upon request.`;
     }
     
     // ============================================
-    // SKILL FILTERS
-    // ============================================
-    const skillFilterBtns = document.querySelectorAll('.skills .filter-btn');
-    const skillCategories = document.querySelectorAll('.skills-category');
-    
-    if (skillFilterBtns.length > 0) {
-        skillFilterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                skillFilterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                skillCategories.forEach(category => {
-                    const categoryType = category.getAttribute('data-category');
-                    
-                    if (filter === 'all' || categoryType === filter) {
-                        category.style.display = 'block';
-                        setTimeout(() => category.style.opacity = '1', 10);
-                    } else {
-                        category.style.opacity = '0';
-                        setTimeout(() => category.style.display = 'none', 300);
-                    }
-                });
-            });
-        });
-    }
-    
-    // ============================================
     // SKILL SEARCH
     // ============================================
     const searchInput = document.querySelector('.skill-search');
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
-            const skillItems = document.querySelectorAll('.skill-item');
-            const techBadges = document.querySelectorAll('.tech-badge');
+            const skillBadges = document.querySelectorAll('.skill-badge');
             const categories = document.querySelectorAll('.skills-category');
             
-            skillItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                item.style.display = text.includes(searchTerm) ? 'block' : 'none';
-            });
-            
-            techBadges.forEach(badge => {
+            skillBadges.forEach(badge => {
                 const text = badge.textContent.toLowerCase();
                 badge.style.display = text.includes(searchTerm) ? 'inline-block' : 'none';
             });
             
             categories.forEach(category => {
-                const visibleItems = category.querySelectorAll('.skill-item[style*="display: block"], .skill-item:not([style*="display: none"])');
-                const visibleBadges = category.querySelectorAll('.tech-badge[style*="display: inline-block"], .tech-badge:not([style*="display: none"])');
-                category.style.display = (visibleItems.length > 0 || visibleBadges.length > 0) ? 'block' : 'none';
+                const visibleBadges = category.querySelectorAll('.skill-badge[style*="display: inline-block"], .skill-badge:not([style*="display: none"])');
+                category.style.display = visibleBadges.length > 0 ? 'block' : 'none';
             });
         });
     }
