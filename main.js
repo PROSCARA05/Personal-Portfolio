@@ -429,7 +429,7 @@ Available upon request.`;
     }
     
     // ============================================
-    // PROJECT FILTERS
+    // PROJECT FILTERS - FIXED BEHAVIOR
     // ============================================
     const projectFilterBtns = document.querySelectorAll('.projects .filter-btn');
     const projectsGrid = document.querySelector('.projects-grid');
@@ -437,9 +437,22 @@ Available upon request.`;
     if (projectFilterBtns.length > 0 && projectsGrid) {
         const projects = Array.from(document.querySelectorAll('.project-card'));
         
+        // Ensure only "All Projects" is active by default
         projectFilterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-filter') === 'all') {
+                btn.classList.add('active');
+            }
+        });
+        
+        projectFilterBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Remove active class from all buttons
                 projectFilterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
                 btn.classList.add('active');
                 
                 const filter = btn.getAttribute('data-filter');
@@ -477,12 +490,20 @@ Available upon request.`;
             
             skillBadges.forEach(badge => {
                 const text = badge.textContent.toLowerCase();
-                badge.style.display = text.includes(searchTerm) ? 'inline-block' : 'none';
+                if (text.includes(searchTerm)) {
+                    badge.style.display = 'inline-block';
+                } else {
+                    badge.style.display = 'none';
+                }
             });
             
             categories.forEach(category => {
                 const visibleBadges = category.querySelectorAll('.skill-badge[style*="display: inline-block"], .skill-badge:not([style*="display: none"])');
-                category.style.display = visibleBadges.length > 0 ? 'block' : 'none';
+                if (visibleBadges.length > 0) {
+                    category.style.display = 'block';
+                } else {
+                    category.style.display = 'none';
+                }
             });
         });
     }
