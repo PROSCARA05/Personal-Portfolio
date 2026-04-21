@@ -118,27 +118,45 @@ body.dark-mode .project-section {
     border-color: #334155;
 }
 
+/* Enhanced Skills Badge Dark Mode Visibility */
+body.dark-mode .skills-category {
+    background-color: var(--dark-light);
+    border-color: #334155;
+}
+
 body.dark-mode .skill-badge {
-    background-color: #334155;
-    color: #60a5fa;
-    border-color: #475569;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6e 100%);
+    color: #93c5fd;
+    border: 1px solid #3b82f6;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
 }
 
 body.dark-mode .skill-badge:hover {
     background: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
 }
 
+/* Filter Button Dark Mode Fix */
 body.dark-mode .filter-btn {
-    background-color: var(--dark-light);
-    color: #e2e8f0;
+    background-color: #1e293b;
+    color: #cbd5e1;
     border-color: #334155;
+}
+
+body.dark-mode .filter-btn:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+    color: white;
+    border-color: transparent;
 }
 
 body.dark-mode .filter-btn.active {
     background: var(--gradient);
     color: white;
+    border-color: transparent;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
 }
 
 body.dark-mode .form-group input,
@@ -149,9 +167,17 @@ body.dark-mode .skill-search {
     color: #e2e8f0;
 }
 
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder,
+body.dark-mode .skill-search::placeholder {
+    color: #94a3b8;
+}
+
 body.dark-mode .form-group input:focus,
-body.dark-mode .form-group textarea:focus {
+body.dark-mode .form-group textarea:focus,
+body.dark-mode .skill-search:focus {
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
 }
 
 body.dark-mode .nav-menu {
@@ -166,6 +192,10 @@ body.dark-mode .timeline-content h3,
 body.dark-mode .contact-card h3,
 body.dark-mode .project-section h2 {
     color: #ffffff;
+}
+
+body.dark-mode .skills-category h3 i {
+    color: #60a5fa;
 }
 
 body.dark-mode .info-label {
@@ -214,6 +244,44 @@ body.dark-mode .success-message {
 body.dark-mode .error-message {
     background: #7f1d1d;
     color: #fecaca;
+}
+
+body.dark-mode .project-tech span {
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+}
+
+body.dark-mode .section-subtitle {
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+}
+
+body.dark-mode .stat-card {
+    background: var(--dark-light);
+    border-color: #334155;
+}
+
+body.dark-mode .stat-card:hover {
+    border-color: var(--primary-color);
+}
+
+body.dark-mode .stat-number {
+    color: #60a5fa;
+}
+
+body.dark-mode .contact-card i {
+    color: #60a5fa;
+}
+
+body.dark-mode .project-section .tech-badge {
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+body.dark-mode .project-section .tech-badge:hover {
+    background: var(--primary-color);
+    color: white;
 }
 
 /* ============================================ */
@@ -768,7 +836,7 @@ section {
 }
 
 /* ============================================ */
-/* SKILLS SECTION - UPDATED WITHOUT BARS */
+/* SKILLS SECTION - ENHANCED DARK MODE VISIBILITY */
 /* ============================================ */
 .skills {
     background: var(--light);
@@ -826,7 +894,7 @@ body.dark-mode .skills {
     font-size: 22px;
 }
 
-/* New Skills Badges Layout */
+/* Skills Badges Layout */
 .skills-badges {
     display: flex;
     flex-wrap: wrap;
@@ -838,11 +906,12 @@ body.dark-mode .skills {
     padding: 12px 24px;
     border-radius: 12px;
     color: var(--primary-color);
-    font-weight: 500;
+    font-weight: 600;
     transition: var(--transition);
     cursor: default;
     font-size: 15px;
-    border: 1px solid #e2e8f0;
+    border: 1.5px solid rgba(37, 99, 235, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
 }
 
 .skill-badge:hover {
@@ -854,7 +923,7 @@ body.dark-mode .skills {
 }
 
 /* ============================================ */
-/* PROJECT FILTERS */
+/* PROJECT FILTERS - FIXED ACTIVE/HOVER STATE */
 /* ============================================ */
 .project-filters {
     display: flex;
@@ -877,8 +946,14 @@ body.dark-mode .skills {
     border: 1px solid #e2e8f0;
 }
 
-.filter-btn.active,
 .filter-btn:hover {
+    background: var(--gradient);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.filter-btn.active {
     background: var(--gradient);
     color: white;
     border-color: transparent;
