@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ============================================
-    // DOWNLOAD CV BUTTON
+    // DOWNLOAD CV BUTTON - UPDATED WITH CORRECT DATES
     // ============================================
     const downloadCVBtn = document.getElementById('downloadCVBtn');
     if (downloadCVBtn) {
@@ -222,10 +222,10 @@ and innovative software applications.
 
 EDUCATION
 ---------
-2024 - Present: Bachelor of Science in Information Technology
-                (Emerging Technologies)
-                Richfield Graduate Institute of Technology
-                Currently in 3rd year
+2024 - 2026: Bachelor of Science in Information Technology
+             (Emerging Technologies)
+             Richfield Graduate Institute of Technology
+             Currently in final (3rd) year
 
 2023: Higher Certificate in Information Technology
       Richfield Graduate Institute of Technology
