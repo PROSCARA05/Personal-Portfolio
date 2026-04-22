@@ -222,9 +222,10 @@ and innovative software applications.
 
 EDUCATION
 ---------
-2024 - 2026: Bachelor of Science in Information Technology
-             (Emerging Technologies)
-             Richfield Graduate Institute of Technology
+2024 - Present: Bachelor of Science in Information Technology
+                (Emerging Technologies)
+                Richfield Graduate Institute of Technology
+                Currently in 3rd year
 
 2023: Higher Certificate in Information Technology
       Richfield Graduate Institute of Technology
@@ -242,11 +243,11 @@ Libraries: Pandas, NumPy, scikit-learn, Matplotlib
 
 EXPERIENCE
 ----------
-2024 - Present: Web Development Intern
-                GAO Tek Inc
-                • Developing and maintaining web pages using HTML, CSS, JavaScript
-                • Participating in debugging and testing processes
-                • Collaborating with team members on project improvements
+Dec 2023 - Mar 2024: Web Development Intern
+                     GAO Tek Inc
+                     • Developing and maintaining web pages using HTML, CSS, JavaScript
+                     • Participating in debugging and testing processes
+                     • Collaborating with team members on project improvements
 
 PROJECTS
 --------
@@ -437,25 +438,17 @@ Available upon request.`;
     if (projectFilterBtns.length > 0 && projectsGrid) {
         const projects = Array.from(document.querySelectorAll('.project-card'));
         
-        // Ensure only "All Projects" is active by default
         projectFilterBtns.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-filter') === 'all') {
-                btn.classList.add('active');
-            }
-        });
-        
-        projectFilterBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
+            btn.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 
                 // Remove active class from all buttons
                 projectFilterBtns.forEach(b => b.classList.remove('active'));
                 // Add active class to clicked button
-                btn.classList.add('active');
+                this.classList.add('active');
                 
-                const filter = btn.getAttribute('data-filter');
+                const filter = this.getAttribute('data-filter');
                 
                 projects.forEach(project => {
                     const categories = project.getAttribute('data-category').split(' ');
