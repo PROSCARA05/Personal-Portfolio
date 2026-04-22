@@ -2,16 +2,16 @@
 // WAIT FOR DOM TO LOAD
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('%c👋 Welcome to Karabo Nkadimeng\'s AI & Emerging Technologies Portfolio!', 'color: #2563eb; font-size: 16px; font-weight: bold;');
+    console.log('%c👋 Welcome to Karabo Nkadimeng\'s Emerging Technologies Portfolio!', 'color: #2563eb; font-size: 16px; font-weight: bold;');
     
     // ============================================
-    // TYPING ANIMATION - Updated with AI focus
+    // TYPING ANIMATION
     // ============================================
     const typedTextSpan = document.querySelector('.typed-text');
     const cursorSpan = document.querySelector('.cursor');
     
     if (typedTextSpan && cursorSpan) {
-        const textArray = ['AI & ML Specialist', 'Emerging Technologies', 'Data Engineering', 'Python Developer', 'Problem Solver'];
+        const textArray = ['Emerging Technologies', 'Data Analysis', 'Python Developer', 'Problem Solver', 'Cloud Computing'];
         const typingDelay = 100;
         const erasingDelay = 50;
         const newTextDelay = 2000;
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ============================================
-    // DOWNLOAD CV BUTTON - UPDATED FOR AI/ML FOCUS
+    // DOWNLOAD CV BUTTON
     // ============================================
     const downloadCVBtn = document.getElementById('downloadCVBtn');
     if (downloadCVBtn) {
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const cvContent = `KARABO NKADIMENG - CURRICULUM VITAE
 =====================================
-AI & Emerging Technologies Specialist
+Emerging Technologies Specialist
 
 CONTACT INFORMATION
 -------------------
@@ -218,18 +218,18 @@ GitHub: github.com/PROSCARA05
 PROFESSIONAL SUMMARY
 --------------------
 Curious and self-motivated 3rd-year BSc IT student specializing in 
-Emerging Technologies (AI focus). Passionate about building AI-driven 
-solutions, machine learning models, and data engineering applications. 
-Seeking an AI internship opportunity to apply skills in predictive 
-modeling, data analysis, and cloud technologies.
+Emerging Technologies. Coursework includes Data Analysis, Cloud Computing, 
+and modern software development practices. Seeking an internship 
+opportunity to apply skills in data analysis, Python development, 
+and emerging technologies.
 
 EDUCATION
 ---------
 2024 - 2026: Bachelor of Science in Information Technology
-             Specialization: Emerging Technologies (AI Focus)
+             Specialization: Emerging Technologies
              Richfield Graduate Institute of Technology
              Currently in final (3rd) year
-             Coursework: AI Concepts, Machine Learning, Data Engineering, Cloud Computing
+             Modules: Data Analysis, Cloud Computing, Software Development
 
 2023: Higher Certificate in Information Technology
       Richfield Graduate Institute of Technology
@@ -239,15 +239,14 @@ EDUCATION
 
 TECHNICAL SKILLS
 ----------------
-AI & Machine Learning:
-• Supervised Learning, Model Evaluation, Feature Engineering
-• scikit-learn, Predictive Modeling
-• Model Context Protocol (MCP)
+Emerging Technologies:
+• Data Analysis, Predictive Modeling, Statistical Computing
+• Feature Engineering, Model Evaluation
+• Cloud Fundamentals, Model Context Protocol (MCP)
 
 Python & Data Science:
-• Python, pandas, NumPy, Matplotlib
-• Data Analysis, Data Visualization
-• Jupyter Notebook
+• Python, pandas, NumPy, scikit-learn, Matplotlib
+• Data Visualization, Jupyter Notebook
 
 Cloud & Platforms:
 • Microsoft Azure, Google Cloud
@@ -263,19 +262,19 @@ Web & Tools:
 
 PROJECTS
 --------
-1. Financial Risk Prediction Model (ML)
-   - Logistic Regression & Random Forest classifiers
-   - Loan default risk prediction with 85%+ accuracy
+1. Financial Risk Prediction Model (Featured)
+   - Data analysis and prediction using statistical methods
+   - Loan default risk assessment with 85%+ accuracy
    - Feature engineering and model evaluation
 
-2. Python Data Analysis & ML Suite
+2. Python Data Analysis Suite
    - Data Analysis Tool with statistical modeling
    - Inventory Management System
    - Student Grade Manager with predictive analytics
 
-3. AI Portfolio Website (Live)
+3. Portfolio Website (Live)
    - Modern responsive design with dark mode
-   - Showcases AI/ML projects and technical skills
+   - Showcases Emerging Technologies projects
 
 4. C++ Calculator Application
    - Console-based arithmetic operations
@@ -306,7 +305,7 @@ Available upon request.`;
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'Karabo_Nkadimeng_AI_CV.doc';
+            a.download = 'Karabo_Nkadimeng_CV.doc';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
@@ -407,7 +406,7 @@ Available upon request.`;
     }
     
     // ============================================
-    // COUNTER ANIMATION - Updated counts
+    // COUNTER ANIMATION
     // ============================================
     const counters = document.querySelectorAll('.stat-number');
     let countersAnimated = false;
@@ -466,7 +465,7 @@ Available upon request.`;
     }
     
     // ============================================
-    // PROJECT FILTERS - UPDATED WITH AI CATEGORY
+    // PROJECT FILTERS
     // ============================================
     const projectFilterBtns = document.querySelectorAll('.projects .filter-btn');
     const projectsGrid = document.querySelector('.projects-grid');
@@ -546,24 +545,31 @@ Available upon request.`;
     }
     
     // ============================================
-    // PROJECT CARD CLICKS
+    // PROJECT CARD CLICKS - ENHANCED
     // ============================================
     document.querySelectorAll('.project-card').forEach(card => {
         const detailLink = card.querySelector('.project-link[href*="project-detail.html"]');
         if (detailLink) {
             card.style.cursor = 'pointer';
             card.addEventListener('click', (e) => {
-                if (!e.target.closest('a')) {
+                // Don't trigger if clicking on a specific link/button inside the card
+                if (!e.target.closest('a') && !e.target.closest('button')) {
                     window.location.href = detailLink.getAttribute('href');
                 }
             });
         }
     });
     
+    // Ensure all project links have pointer cursor
+    document.querySelectorAll('.project-link').forEach(link => {
+        link.style.cursor = 'pointer';
+    });
+    
     // ============================================
     // CONTACT CARD CLICKS (Copy to clipboard)
     // ============================================
     document.querySelectorAll('.contact-card').forEach(card => {
+        card.style.cursor = 'pointer';
         card.addEventListener('click', () => {
             const text = card.querySelector('p')?.textContent;
             if (text && navigator.clipboard) {
@@ -574,6 +580,13 @@ Available upon request.`;
                 });
             }
         });
+    });
+    
+    // ============================================
+    // STAT CARD CLICKS
+    // ============================================
+    document.querySelectorAll('.stat-card').forEach(card => {
+        card.style.cursor = 'pointer';
     });
     
     // ============================================
