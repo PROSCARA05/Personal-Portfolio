@@ -118,7 +118,6 @@ body.dark-mode .project-section {
     border-color: #334155;
 }
 
-/* Enhanced Skills Badge Dark Mode Visibility */
 body.dark-mode .skills-category {
     background-color: var(--dark-light);
     border-color: #334155;
@@ -139,7 +138,6 @@ body.dark-mode .skill-badge:hover {
     box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
 }
 
-/* Filter Button Dark Mode Fix */
 body.dark-mode .filter-btn {
     background-color: #1e293b;
     color: #cbd5e1;
@@ -836,7 +834,7 @@ section {
 }
 
 /* ============================================ */
-/* SKILLS SECTION - ENHANCED DARK MODE VISIBILITY */
+/* SKILLS SECTION */
 /* ============================================ */
 .skills {
     background: var(--light);
@@ -894,7 +892,6 @@ body.dark-mode .skills {
     font-size: 22px;
 }
 
-/* Skills Badges Layout */
 .skills-badges {
     display: flex;
     flex-wrap: wrap;
@@ -923,7 +920,7 @@ body.dark-mode .skills {
 }
 
 /* ============================================ */
-/* PROJECT FILTERS - FIXED ACTIVE/HOVER STATE */
+/* PROJECT FILTERS */
 /* ============================================ */
 .project-filters {
     display: flex;
@@ -947,7 +944,6 @@ body.dark-mode .skills {
     outline: none;
 }
 
-/* Hover state - only applies when NOT active */
 .filter-btn:not(.active):hover {
     background: var(--gradient);
     color: white;
@@ -955,7 +951,6 @@ body.dark-mode .skills {
     box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
 }
 
-/* Active state - overrides hover */
 .filter-btn.active {
     background: var(--gradient) !important;
     color: white !important;
@@ -1263,11 +1258,6 @@ body.dark-mode .contact {
     width: 100%;
     padding: 15px;
     font-size: 16px;
-}
-
-.contact-form .btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
 }
 
 #form-message {
