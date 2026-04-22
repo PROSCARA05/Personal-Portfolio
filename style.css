@@ -146,17 +146,17 @@ body.dark-mode .filter-btn {
     border-color: #334155;
 }
 
-body.dark-mode .filter-btn:hover {
+body.dark-mode .filter-btn:not(.active):hover {
     background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
     color: white;
     border-color: transparent;
 }
 
 body.dark-mode .filter-btn.active {
-    background: var(--gradient);
-    color: white;
-    border-color: transparent;
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    background: var(--gradient) !important;
+    color: white !important;
+    border-color: transparent !important;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3) !important;
 }
 
 body.dark-mode .form-group input,
@@ -944,20 +944,23 @@ body.dark-mode .skills {
     font-weight: 500;
     font-size: 14px;
     border: 1px solid #e2e8f0;
+    outline: none;
 }
 
-.filter-btn:hover {
+/* Hover state - only applies when NOT active */
+.filter-btn:not(.active):hover {
     background: var(--gradient);
     color: white;
     border-color: transparent;
     box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
 }
 
+/* Active state - overrides hover */
 .filter-btn.active {
-    background: var(--gradient);
-    color: white;
-    border-color: transparent;
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    background: var(--gradient) !important;
+    color: white !important;
+    border-color: transparent !important;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3) !important;
 }
 
 /* ============================================ */
