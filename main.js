@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ============================================
-    // DOWNLOAD CV BUTTON - UPDATED WITH CORRECT DATES
+    // DOWNLOAD CV BUTTON - UPDATED WITH WORDPRESS
     // ============================================
     const downloadCVBtn = document.getElementById('downloadCVBtn');
     if (downloadCVBtn) {
@@ -237,6 +237,7 @@ TECHNICAL SKILLS
 ----------------
 Programming: Python, C++, JavaScript
 Web Development: HTML5, CSS3, Responsive Design
+CMS: WordPress
 AI & Emerging Tech: AI Concepts, Machine Learning, Data Handling, Cloud Fundamentals
 Tools: Git, GitHub, VS Code, Microsoft 365, Azure, Google Cloud
 Libraries: Pandas, NumPy, scikit-learn, Matplotlib
@@ -245,9 +246,10 @@ EXPERIENCE
 ----------
 Dec 2023 - Mar 2024: Web Development Intern
                      GAO Tek Inc
-                     • Developing and maintaining web pages using HTML, CSS, JavaScript
-                     • Participating in debugging and testing processes
-                     • Collaborating with team members on project improvements
+                     • Worked with WordPress to manage and update website content
+                     • Inserted images and created pages
+                     • Maintained site structure and ensured content consistency
+                     • Assisted with content organization across all pages
 
 PROJECTS
 --------
