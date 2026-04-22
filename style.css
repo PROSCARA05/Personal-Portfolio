@@ -45,7 +45,103 @@ body {
 }
 
 /* ============================================ */
-/* IN PROGRESS BADGE */
+/* CURSOR POINTER FOR ALL CLICKABLE ELEMENTS */
+/* ============================================ */
+button,
+.btn,
+.filter-btn,
+.dark-mode-toggle,
+.back-to-top,
+.nav-toggle {
+    cursor: pointer !important;
+}
+
+.project-card {
+    cursor: pointer !important;
+}
+
+.project-link {
+    cursor: pointer !important;
+}
+
+.contact-card {
+    cursor: pointer !important;
+}
+
+.stat-card {
+    cursor: pointer !important;
+}
+
+.nav-link {
+    cursor: pointer !important;
+}
+
+.logo {
+    cursor: pointer !important;
+}
+
+.social-link {
+    cursor: pointer !important;
+}
+
+.skill-badge {
+    cursor: default !important;
+}
+
+.skill-badge:hover {
+    cursor: default !important;
+}
+
+.contact-form .btn[type="submit"],
+button[type="submit"] {
+    cursor: pointer !important;
+}
+
+.project-filters .filter-btn {
+    cursor: pointer !important;
+}
+
+.back-to-portfolio {
+    cursor: pointer !important;
+}
+
+.project-links-detail .btn {
+    cursor: pointer !important;
+}
+
+.footer-social a {
+    cursor: pointer !important;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+    cursor: pointer !important;
+}
+
+.fa-github, .fa-linkedin-in, .fa-envelope, .fa-twitter,
+.fa-external-link-alt, .fa-info-circle {
+    cursor: pointer !important;
+}
+
+.dark-mode-toggle i,
+.back-to-top i,
+.nav-toggle i {
+    cursor: pointer !important;
+}
+
+.project-image {
+    cursor: pointer !important;
+}
+
+.project-content {
+    cursor: pointer !important;
+}
+
+.project-content h3 {
+    cursor: pointer !important;
+}
+
+/* ============================================ */
+/* BADGES */
 /* ============================================ */
 .in-progress-badge {
     display: inline-block;
@@ -61,8 +157,27 @@ body {
     vertical-align: middle;
 }
 
+.featured-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-left: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+}
+
 body.dark-mode .in-progress-badge {
     background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #0f172a;
+}
+
+body.dark-mode .featured-badge {
+    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
     color: #0f172a;
 }
 
