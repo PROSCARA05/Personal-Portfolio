@@ -2,16 +2,16 @@
 // WAIT FOR DOM TO LOAD
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('%c👋 Welcome to Karabo Nkadimeng\'s Portfolio!', 'color: #2563eb; font-size: 16px; font-weight: bold;');
+    console.log('%c👋 Welcome to Karabo Nkadimeng\'s AI & Emerging Technologies Portfolio!', 'color: #2563eb; font-size: 16px; font-weight: bold;');
     
     // ============================================
-    // TYPING ANIMATION
+    // TYPING ANIMATION - Updated with AI focus
     // ============================================
     const typedTextSpan = document.querySelector('.typed-text');
     const cursorSpan = document.querySelector('.cursor');
     
     if (typedTextSpan && cursorSpan) {
-        const textArray = ['AI & ML Enthusiast', 'Software Developer', 'Problem Solver', 'Innovative Thinker'];
+        const textArray = ['AI & ML Specialist', 'Emerging Technologies', 'Data Engineering', 'Python Developer', 'Problem Solver'];
         const typingDelay = 100;
         const erasingDelay = 50;
         const newTextDelay = 2000;
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ============================================
-    // DOWNLOAD CV BUTTON - UPDATED WITH WORDPRESS
+    // DOWNLOAD CV BUTTON - UPDATED FOR AI/ML FOCUS
     // ============================================
     const downloadCVBtn = document.getElementById('downloadCVBtn');
     if (downloadCVBtn) {
@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const cvContent = `KARABO NKADIMENG - CURRICULUM VITAE
 =====================================
+AI & Emerging Technologies Specialist
 
 CONTACT INFORMATION
 -------------------
@@ -217,15 +218,18 @@ GitHub: github.com/PROSCARA05
 PROFESSIONAL SUMMARY
 --------------------
 Curious and self-motivated 3rd-year BSc IT student specializing in 
-Emerging Technologies, with a passion for building AI-driven solutions 
-and innovative software applications.
+Emerging Technologies (AI focus). Passionate about building AI-driven 
+solutions, machine learning models, and data engineering applications. 
+Seeking an AI internship opportunity to apply skills in predictive 
+modeling, data analysis, and cloud technologies.
 
 EDUCATION
 ---------
 2024 - 2026: Bachelor of Science in Information Technology
-             (Emerging Technologies)
+             Specialization: Emerging Technologies (AI Focus)
              Richfield Graduate Institute of Technology
              Currently in final (3rd) year
+             Coursework: AI Concepts, Machine Learning, Data Engineering, Cloud Computing
 
 2023: Higher Certificate in Information Technology
       Richfield Graduate Institute of Technology
@@ -235,28 +239,58 @@ EDUCATION
 
 TECHNICAL SKILLS
 ----------------
-Programming: Python, C++, JavaScript
-Web Development: HTML5, CSS3, Responsive Design
-CMS: WordPress
-AI & Emerging Tech: AI Concepts, Machine Learning, Data Handling, Cloud Fundamentals
-Tools: Git, GitHub, VS Code, Microsoft 365, Azure, Google Cloud
-Libraries: Pandas, NumPy, scikit-learn, Matplotlib
+AI & Machine Learning:
+• Supervised Learning, Model Evaluation, Feature Engineering
+• scikit-learn, Predictive Modeling
+• Model Context Protocol (MCP)
+
+Python & Data Science:
+• Python, pandas, NumPy, Matplotlib
+• Data Analysis, Data Visualization
+• Jupyter Notebook
+
+Cloud & Platforms:
+• Microsoft Azure, Google Cloud
+• Git, GitHub, VS Code
+
+Programming Languages:
+• Python (Advanced), C++ (Intermediate), JavaScript (Intermediate)
+• SQL (Learning)
+
+Web & Tools:
+• HTML5, CSS3, Responsive Design
+• WordPress, Microsoft 365
+
+PROJECTS
+--------
+1. Financial Risk Prediction Model (ML)
+   - Logistic Regression & Random Forest classifiers
+   - Loan default risk prediction with 85%+ accuracy
+   - Feature engineering and model evaluation
+
+2. Python Data Analysis & ML Suite
+   - Data Analysis Tool with statistical modeling
+   - Inventory Management System
+   - Student Grade Manager with predictive analytics
+
+3. AI Portfolio Website (Live)
+   - Modern responsive design with dark mode
+   - Showcases AI/ML projects and technical skills
+
+4. C++ Calculator Application
+   - Console-based arithmetic operations
+   - Input validation and error handling
+
+5. TMF Judicators Choral System (In Progress)
+   - Web-based management system
 
 EXPERIENCE
 ----------
 Dec 2023 - Mar 2024: Web Development Intern
                      GAO Tek Inc
-                     • Worked with WordPress to manage and update website content
-                     • Inserted images and created pages
-                     • Maintained site structure and ensured content consistency
-                     • Assisted with content organization across all pages
-
-PROJECTS
---------
-1. Personal Portfolio Website (Live)
-2. C++ Calculator Application
-3. TMF Judicators Choral System (In Progress)
-4. Python Data Handling Suite (3-in-1)
+                     • Managed WordPress website content
+                     • Created pages and maintained site structure
+                     • Ensured content consistency across all pages
 
 LANGUAGES
 ---------
@@ -272,7 +306,7 @@ Available upon request.`;
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'Karabo_Nkadimeng_CV.doc';
+            a.download = 'Karabo_Nkadimeng_AI_CV.doc';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
@@ -373,7 +407,7 @@ Available upon request.`;
     }
     
     // ============================================
-    // COUNTER ANIMATION
+    // COUNTER ANIMATION - Updated counts
     // ============================================
     const counters = document.querySelectorAll('.stat-number');
     let countersAnimated = false;
@@ -432,13 +466,21 @@ Available upon request.`;
     }
     
     // ============================================
-    // PROJECT FILTERS - FIXED BEHAVIOR
+    // PROJECT FILTERS - UPDATED WITH AI CATEGORY
     // ============================================
     const projectFilterBtns = document.querySelectorAll('.projects .filter-btn');
     const projectsGrid = document.querySelector('.projects-grid');
     
     if (projectFilterBtns.length > 0 && projectsGrid) {
         const projects = Array.from(document.querySelectorAll('.project-card'));
+        
+        // Ensure only "All Projects" is active by default
+        projectFilterBtns.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-filter') === 'all') {
+                btn.classList.add('active');
+            }
+        });
         
         projectFilterBtns.forEach(btn => {
             btn.addEventListener('click', function(e) {
