@@ -158,6 +158,11 @@
                 navMenu.classList.remove('active');
             }
         });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
         
         // Navbar scroll effect
         const navbar = document.querySelector('.navbar');
@@ -707,6 +712,7 @@ if __name__ == "__main__":
             }
         };
         
+        // Get project ID from URL
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('id') || 'portfolio';
         const project = projects[projectId];
@@ -738,6 +744,9 @@ if __name__ == "__main__":
             
             const iconElement = document.querySelector('#project-image i');
             if (iconElement) iconElement.className = 'fas ' + project.icon;
+        } else {
+            document.getElementById('project-title').textContent = 'Project Not Found';
+            document.getElementById('project-content').innerHTML = '<p style="text-align:center; padding:40px;">The requested project could not be found. <a href="index.html">Back to Portfolio</a></p>';
         }
     </script>
 </body>
