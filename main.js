@@ -2,7 +2,7 @@
 // WAIT FOR DOM TO LOAD
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('%c👋 Welcome to Karabo Nkadimeng\'s Emerging Technologies Portfolio!', 'color: #2563eb; font-size: 16px; font-weight: bold;');
+    console.log('%c👋 Welcome to Karabo Nkadimeng\'s Portfolio!', 'color: #2563eb; font-size: 16px; font-weight: bold;');
     
     // ============================================
     // TYPING ANIMATION
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cursorSpan = document.querySelector('.cursor');
     
     if (typedTextSpan && cursorSpan) {
-        const textArray = ['Emerging Technologies', 'Data Analysis', 'Python Developer', 'Problem Solver', 'Cloud Computing'];
+        const textArray = ['AI & ML Enthusiast', 'Software Developer', 'Problem Solver', 'Innovative Thinker'];
         const typingDelay = 100;
         const erasingDelay = 50;
         const newTextDelay = 2000;
@@ -205,7 +205,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const cvContent = `KARABO NKADIMENG - CURRICULUM VITAE
 =====================================
-Emerging Technologies Specialist
 
 CONTACT INFORMATION
 -------------------
@@ -218,18 +217,14 @@ GitHub: github.com/PROSCARA05
 PROFESSIONAL SUMMARY
 --------------------
 Curious and self-motivated 3rd-year BSc IT student specializing in 
-Emerging Technologies. Coursework includes Data Analysis, Cloud Computing, 
-and modern software development practices. Seeking an internship 
-opportunity to apply skills in data analysis, Python development, 
-and emerging technologies.
+Emerging Technologies, with a passion for building AI-driven solutions 
+and innovative software applications.
 
 EDUCATION
 ---------
 2024 - 2026: Bachelor of Science in Information Technology
-             Specialization: Emerging Technologies
+             (Emerging Technologies)
              Richfield Graduate Institute of Technology
-             Currently in final (3rd) year
-             Modules: Data Analysis, Cloud Computing, Software Development
 
 2023: Higher Certificate in Information Technology
       Richfield Graduate Institute of Technology
@@ -239,57 +234,27 @@ EDUCATION
 
 TECHNICAL SKILLS
 ----------------
-Emerging Technologies:
-• Data Analysis, Predictive Modeling, Statistical Computing
-• Feature Engineering, Model Evaluation
-• Cloud Fundamentals, Model Context Protocol (MCP)
-
-Python & Data Science:
-• Python, pandas, NumPy, scikit-learn, Matplotlib
-• Data Visualization, Jupyter Notebook
-
-Cloud & Platforms:
-• Microsoft Azure, Google Cloud
-• Git, GitHub, VS Code
-
-Programming Languages:
-• Python (Advanced), C++ (Intermediate), JavaScript (Intermediate)
-• SQL (Learning)
-
-Web & Tools:
-• HTML5, CSS3, Responsive Design
-• WordPress, Microsoft 365
-
-PROJECTS
---------
-1. Financial Risk Prediction Model (Featured)
-   - Data analysis and prediction using statistical methods
-   - Loan default risk assessment with 85%+ accuracy
-   - Feature engineering and model evaluation
-
-2. Python Data Analysis Suite
-   - Data Analysis Tool with statistical modeling
-   - Inventory Management System
-   - Student Grade Manager with predictive analytics
-
-3. Portfolio Website (Live)
-   - Modern responsive design with dark mode
-   - Showcases Emerging Technologies projects
-
-4. C++ Calculator Application
-   - Console-based arithmetic operations
-   - Input validation and error handling
-
-5. TMF Judicators Choral System (In Progress)
-   - Web-based management system
+Programming: Python, C++, JavaScript, Java
+Web Development: HTML5, CSS3, Responsive Design
+AI & Emerging Tech: AI Concepts, Machine Learning, Data Handling, Cloud Fundamentals
+Tools: Git, GitHub, VS Code, Microsoft 365, Azure, Google Cloud
+Libraries: Pandas, NumPy, scikit-learn, Matplotlib, XGBoost
 
 EXPERIENCE
 ----------
-Dec 2023 - Mar 2024: Web Development Intern
-                     GAO Tek Inc
-                     • Managed WordPress website content
-                     • Created pages and maintained site structure
-                     • Ensured content consistency across all pages
+2024 - Present: Web Development Intern
+                GAO Tek Inc
+                • Developing and maintaining web pages using HTML, CSS, JavaScript
+                • Participating in debugging and testing processes
+                • Collaborating with team members on project improvements
+
+PROJECTS
+--------
+1. Personal Portfolio Website (Live)
+2. C++ Calculator Application
+3. TMF Judicators Choral System (In Progress)
+4. Python Data Handling Suite (3-in-1)
+5. Financial Risk Prediction Model
 
 LANGUAGES
 ---------
@@ -471,42 +436,29 @@ Available upon request.`;
     const projectsGrid = document.querySelector('.projects-grid');
     
     if (projectFilterBtns.length > 0 && projectsGrid) {
-        const projects = Array.from(document.querySelectorAll('.project-card'));
-        
-        // Ensure only "All Projects" is active by default
-        projectFilterBtns.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-filter') === 'all') {
-                btn.classList.add('active');
-            }
-        });
+        const projectCards = document.querySelectorAll('.project-card');
         
         projectFilterBtns.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                // Remove active class from all buttons
+            btn.addEventListener('click', () => {
                 projectFilterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                this.classList.add('active');
+                btn.classList.add('active');
                 
-                const filter = this.getAttribute('data-filter');
+                const filter = btn.getAttribute('data-filter');
                 
-                projects.forEach(project => {
-                    const categories = project.getAttribute('data-category').split(' ');
+                projectCards.forEach(card => {
+                    const categories = card.getAttribute('data-category').split(' ');
                     
                     if (filter === 'all' || categories.includes(filter)) {
-                        project.style.display = 'block';
+                        card.style.display = 'block';
                         setTimeout(() => {
-                            project.style.opacity = '1';
-                            project.style.transform = 'scale(1)';
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
                         }, 10);
                     } else {
-                        project.style.opacity = '0';
-                        project.style.transform = 'scale(0.8)';
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
                         setTimeout(() => {
-                            project.style.display = 'none';
+                            card.style.display = 'none';
                         }, 300);
                     }
                 });
@@ -526,51 +478,40 @@ Available upon request.`;
             
             skillBadges.forEach(badge => {
                 const text = badge.textContent.toLowerCase();
-                if (text.includes(searchTerm)) {
-                    badge.style.display = 'inline-block';
-                } else {
-                    badge.style.display = 'none';
-                }
+                badge.style.display = text.includes(searchTerm) ? 'inline-block' : 'none';
             });
             
             categories.forEach(category => {
                 const visibleBadges = category.querySelectorAll('.skill-badge[style*="display: inline-block"], .skill-badge:not([style*="display: none"])');
-                if (visibleBadges.length > 0) {
-                    category.style.display = 'block';
-                } else {
-                    category.style.display = 'none';
-                }
+                category.style.display = visibleBadges.length > 0 ? 'block' : 'none';
             });
         });
     }
     
     // ============================================
-    // PROJECT CARD CLICKS - ENHANCED
+    // PROJECT CARD CLICKS - FIXED
     // ============================================
     document.querySelectorAll('.project-card').forEach(card => {
-        const detailLink = card.querySelector('.project-link[href*="project-detail.html"]');
+        const detailLink = card.querySelector('a[href*="project-detail.html"]');
         if (detailLink) {
             card.style.cursor = 'pointer';
             card.addEventListener('click', (e) => {
-                // Don't trigger if clicking on a specific link/button inside the card
-                if (!e.target.closest('a') && !e.target.closest('button')) {
+                // Don't trigger if clicking on a specific link
+                if (!e.target.closest('a')) {
                     window.location.href = detailLink.getAttribute('href');
                 }
             });
         }
     });
     
-    // Ensure all project links have pointer cursor
-    document.querySelectorAll('.project-link').forEach(link => {
-        link.style.cursor = 'pointer';
-    });
-    
     // ============================================
     // CONTACT CARD CLICKS (Copy to clipboard)
     // ============================================
     document.querySelectorAll('.contact-card').forEach(card => {
-        card.style.cursor = 'pointer';
-        card.addEventListener('click', () => {
+        card.addEventListener('click', (e) => {
+            // Don't copy if clicking on a link
+            if (e.target.closest('a')) return;
+            
             const text = card.querySelector('p')?.textContent;
             if (text && navigator.clipboard) {
                 navigator.clipboard.writeText(text).then(() => {
@@ -580,13 +521,6 @@ Available upon request.`;
                 });
             }
         });
-    });
-    
-    // ============================================
-    // STAT CARD CLICKS
-    // ============================================
-    document.querySelectorAll('.stat-card').forEach(card => {
-        card.style.cursor = 'pointer';
     });
     
     // ============================================
@@ -610,4 +544,14 @@ Available upon request.`;
     });
     
     console.log("%c🎮 Try typing the Konami Code (↑ ↑ ↓ ↓ ← → ← → B A)!", "color: #fbbf24; font-size: 12px;");
+    
+    // ============================================
+    // PREVENT DEFAULT ON ALL PROJECT DETAIL LINKS
+    // ============================================
+    document.querySelectorAll('.project-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Let the link work normally - don't prevent default
+            // This ensures project detail links navigate correctly
+        });
+    });
 });
