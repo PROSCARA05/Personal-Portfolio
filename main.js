@@ -234,27 +234,29 @@ EDUCATION
 
 TECHNICAL SKILLS
 ----------------
-Programming: Python, C++, JavaScript, Java
+Programming: Python, C++, JavaScript
 Web Development: HTML5, CSS3, Responsive Design
-AI & Emerging Tech: AI Concepts, Machine Learning, Data Handling, Cloud Fundamentals
-Tools: Git, GitHub, VS Code, Microsoft 365, Azure, Google Cloud
-Libraries: Pandas, NumPy, scikit-learn, Matplotlib, XGBoost
+AI & Emerging Tech: AI Concepts, Machine Learning, Data Science, 
+                    Data Visualization, Statistics, MCP
+Cloud Platforms: Microsoft Azure, Google Cloud, AWS
+Tools: Git, GitHub, VS Code, Microsoft 365
+Libraries: Pandas, NumPy, scikit-learn, Matplotlib
 
 EXPERIENCE
 ----------
-2024 - Present: Web Development Intern
-                GAO Tek Inc
-                • Developing and maintaining web pages using HTML, CSS, JavaScript
-                • Participating in debugging and testing processes
-                • Collaborating with team members on project improvements
+Dec 2023 - Feb 2024: Web Development Intern
+                     GAO Tek Inc
+                     • Developed and maintained web pages using HTML, CSS, JavaScript
+                     • Participated in debugging and testing processes
+                     • Collaborated with team members on project improvements
 
 PROJECTS
 --------
-1. Personal Portfolio Website (Live)
-2. C++ Calculator Application
-3. TMF Judicators Choral System (In Progress)
-4. Python Data Handling Suite (3-in-1)
-5. Financial Risk Prediction Model
+1. Python Data Handling Suite (3-in-1)
+2. Financial Risk Prediction Model (AI/ML)
+3. Personal Portfolio Website (Live)
+4. C++ Calculator Application
+5. TMF Judicators Choral System (In Progress)
 
 LANGUAGES
 ---------
