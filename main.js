@@ -489,14 +489,14 @@ Available upon request.`;
     }
     
     // ============================================
-    // PROJECT CARD CLICKS - FIXED
+    // PROJECT CARD CLICKS - Navigate to detail page
     // ============================================
     document.querySelectorAll('.project-card').forEach(card => {
         const detailLink = card.querySelector('a[href*="project-detail.html"]');
         if (detailLink) {
             card.style.cursor = 'pointer';
-            card.addEventListener('click', (e) => {
-                // Don't trigger if clicking on a specific link
+            card.addEventListener('click', function(e) {
+                // Only navigate if user didn't click on a specific link
                 if (!e.target.closest('a')) {
                     window.location.href = detailLink.getAttribute('href');
                 }
@@ -509,7 +509,6 @@ Available upon request.`;
     // ============================================
     document.querySelectorAll('.contact-card').forEach(card => {
         card.addEventListener('click', (e) => {
-            // Don't copy if clicking on a link
             if (e.target.closest('a')) return;
             
             const text = card.querySelector('p')?.textContent;
@@ -544,14 +543,4 @@ Available upon request.`;
     });
     
     console.log("%c🎮 Try typing the Konami Code (↑ ↑ ↓ ↓ ← → ← → B A)!", "color: #fbbf24; font-size: 12px;");
-    
-    // ============================================
-    // PREVENT DEFAULT ON ALL PROJECT DETAIL LINKS
-    // ============================================
-    document.querySelectorAll('.project-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Let the link work normally - don't prevent default
-            // This ensures project detail links navigate correctly
-        });
-    });
 });
