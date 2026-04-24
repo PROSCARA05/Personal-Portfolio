@@ -25,7 +25,7 @@
             </div>
             <div class="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#skills">Skills</a></li>
                     <li><a href="index.html#projects" class="active">Projects</a></li>
@@ -64,7 +64,7 @@
             </div>
             
             <div class="project-image-hero" id="project-image">
-                <i class="fas fa-chart-line"></i>
+                <i class="fas fa-code" id="project-icon"></i>
             </div>
             
             <div class="project-content-detail" id="project-content"></div>
@@ -432,92 +432,6 @@ class InventorySystem:
                     </div>
                 `
             },
-            'student-management': {
-                title: 'Student Management System',
-                date: '2024',
-                version: 'v1.0.0',
-                readtime: '4 min read',
-                github: 'https://github.com/PROSCARA05/Student-Management-System',
-                demo: null,
-                icon: 'fa-user-graduate',
-                content: `
-                    <div class="project-section">
-                        <h2>Overview</h2>
-                        <p>A comprehensive Java-based console application for managing student records, courses, and academic performance. The system demonstrates object-oriented programming principles with file-based data persistence.</p>
-                    </div>
-                    <div class="project-section">
-                        <h2>Key Features</h2>
-                        <ul class="feature-list">
-                            <li>Add, view, update, and delete student records</li>
-                            <li>Course enrollment and management system</li>
-                            <li>Grade entry and GPA calculation</li>
-                            <li>File I/O for data persistence (automatic save/load)</li>
-                            <li>Search and filter students by ID, name, or course</li>
-                            <li>Generate student transcripts and performance reports</li>
-                            <li>Input validation and comprehensive error handling</li>
-                            <li>Interactive console menu system</li>
-                        </ul>
-                    </div>
-                    <div class="project-section">
-                        <h2>Technologies Used</h2>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Java</span>
-                            <span class="tech-badge">OOP</span>
-                            <span class="tech-badge">File I/O</span>
-                            <span class="tech-badge">Collections Framework</span>
-                            <span class="tech-badge">Serialization</span>
-                            <span class="tech-badge">Exception Handling</span>
-                        </div>
-                    </div>
-                    <div class="project-section">
-                        <h2>Code Example</h2>
-                        <div class="code-block"><pre>public class StudentManagementSystem {
-    private ArrayList&lt;Student&gt; students;
-    private ArrayList&lt;Course&gt; courses;
-    
-    public void addStudent(Student student) {
-        students.add(student);
-        saveToFile();
-        System.out.println("Student added successfully!");
-    }
-    
-    public void enrollStudentInCourse(String studentId, String courseCode) {
-        Student student = findStudentById(studentId);
-        Course course = findCourseByCode(courseCode);
-        if (student != null && course != null) {
-            student.enrollCourse(course);
-            saveToFile();
-            System.out.println("Student enrolled in " + course.getName());
-        }
-    }
-    
-    public double calculateGPA(String studentId) {
-        Student student = findStudentById(studentId);
-        if (student != null) {
-            return student.calculateGPA();
-        }
-        return 0.0;
-    }
-}</pre></div>
-                    </div>
-                    <div class="project-section">
-                        <h2>Learning Outcomes</h2>
-                        <p>This project demonstrates proficiency in:</p>
-                        <ul class="feature-list">
-                            <li>Object-Oriented Programming (encapsulation, inheritance, polymorphism)</li>
-                            <li>Data structures using Java Collections Framework</li>
-                            <li>File I/O operations for data persistence</li>
-                            <li>Exception handling and input validation</li>
-                            <li>Console-based user interface design</li>
-                            <li>Clean code architecture and documentation</li>
-                        </ul>
-                    </div>
-                    <div class="project-section">
-                        <h2>Links</h2>
-                        <p><i class="fab fa-github"></i> <a href="https://github.com/PROSCARA05/Student-Management-System" target="_blank">View Source Code on GitHub</a></p>
-                    </div>
-                `
-            },
             'financial-risk': {
                 title: 'Financial Risk Prediction Model',
                 date: '2025',
@@ -535,7 +449,7 @@ class InventorySystem:
                         <h2>Key Features</h2>
                         <ul class="feature-list">
                             <li>Data preprocessing and feature engineering pipeline</li>
-                            <li>Multiple ML algorithms (Logistic Regression, Random Forest, XGBoost)</li>
+                            <li>Multiple ML algorithms (Logistic Regression, Random Forest)</li>
                             <li>Model evaluation with confusion matrix and classification reports</li>
                             <li>Risk score calculation and categorization (Low, Medium, High)</li>
                             <li>Feature importance analysis and visualization</li>
@@ -564,11 +478,9 @@ class InventorySystem:
                             <span class="tech-badge">pandas</span>
                             <span class="tech-badge">NumPy</span>
                             <span class="tech-badge">scikit-learn</span>
-                            <span class="tech-badge">XGBoost</span>
                             <span class="tech-badge">matplotlib</span>
                             <span class="tech-badge">seaborn</span>
-                            <span class="tech-badge">Jupyter Notebook</span>
-                            <span class="tech-badge">imbalanced-learn</span>
+                            <span class="tech-badge">Machine Learning</span>
                         </div>
                     </div>
                     <div class="project-section">
@@ -579,7 +491,6 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report, confusion_matrix
-import xgboost as xgb
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -589,12 +500,6 @@ class FinancialRiskPredictor:
         self.model = RandomForestClassifier(
             n_estimators=100,
             max_depth=10,
-            random_state=42
-        )
-        self.xgb_model = xgb.XGBClassifier(
-            n_estimators=100,
-            learning_rate=0.1,
-            max_depth=6,
             random_state=42
         )
     
@@ -641,12 +546,6 @@ class FinancialRiskPredictor:
         print("\\n=== Model Evaluation ===")
         print("\\nClassification Report:")
         print(classification_report(y_test, predictions))
-        
-        print("\\nConfusion Matrix:")
-        cm = confusion_matrix(y_test, predictions)
-        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-        plt.title('Confusion Matrix')
-        plt.show()
         
         # Cross-validation score
         cv_scores = cross_val_score(self.model, X_test, y_test, cv=5)
@@ -723,7 +622,15 @@ if __name__ == "__main__":
             document.getElementById('project-version').textContent = project.version;
             document.getElementById('project-readtime').textContent = project.readtime;
             document.getElementById('project-content').innerHTML = project.content;
+            document.title = project.title + ' | Karabo Nkadimeng';
             
+            // Update icon
+            const iconElement = document.getElementById('project-icon');
+            if (iconElement) {
+                iconElement.className = 'fas ' + project.icon;
+            }
+            
+            // Update buttons
             const githubBtn = document.getElementById('github-link');
             if (project.github) {
                 githubBtn.href = project.github;
@@ -734,19 +641,14 @@ if __name__ == "__main__":
             
             const demoBtn = document.getElementById('demo-link');
             if (project.demo) {
-                demoBtn.style.display = 'inline-flex';
                 demoBtn.href = project.demo;
+                demoBtn.style.display = 'inline-flex';
             } else {
                 demoBtn.style.display = 'none';
             }
-            
-            document.title = project.title + ' | Karabo Nkadimeng';
-            
-            const iconElement = document.querySelector('#project-image i');
-            if (iconElement) iconElement.className = 'fas ' + project.icon;
         } else {
             document.getElementById('project-title').textContent = 'Project Not Found';
-            document.getElementById('project-content').innerHTML = '<p style="text-align:center; padding:40px;">The requested project could not be found. <a href="index.html">Back to Portfolio</a></p>';
+            document.getElementById('project-content').innerHTML = '<p style="text-align:center; padding:40px;">The requested project could not be found. <a href="index.html#projects">Back to Projects</a></p>';
         }
     </script>
 </body>
