@@ -11,7 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const cursorSpan = document.querySelector('.cursor');
     
     if (typedTextSpan && cursorSpan) {
-        const textArray = ['AI & ML Enthusiast', 'Software Developer', 'Problem Solver', 'Innovative Thinker'];
+        const textArray = [
+            'Emerging Tech Specialist',
+            'AI & ML Enthusiast', 
+            'Data-Driven Developer',
+            'Software Developer',
+            'Innovative Problem Solver'
+        ];
         const typingDelay = 100;
         const erasingDelay = 50;
         const newTextDelay = 2000;
@@ -216,15 +222,18 @@ GitHub: github.com/PROSCARA05
 
 PROFESSIONAL SUMMARY
 --------------------
-Curious and self-motivated 3rd-year BSc IT student specializing in 
-Emerging Technologies, with a passion for building AI-driven solutions 
-and innovative software applications.
+Curious and self-motivated final-year BSc IT student specializing in 
+Emerging Technologies, with a passion for building AI-driven solutions, 
+data-powered applications, and innovative software.
 
 EDUCATION
 ---------
 2024 - 2026: Bachelor of Science in Information Technology
              (Emerging Technologies)
              Richfield Graduate Institute of Technology
+             Key Modules: AI & ML, Statistics for Data Science,
+             Data Manipulation & Visualization, Data Science Fundamentals,
+             Cloud Computing
 
 2023: Higher Certificate in Information Technology
       Richfield Graduate Institute of Technology
@@ -236,8 +245,8 @@ TECHNICAL SKILLS
 ----------------
 Programming: Python, C++, JavaScript
 Web Development: HTML5, CSS3, Responsive Design
-AI & Emerging Tech: AI Concepts, Machine Learning, Data Science, 
-                    Data Visualization, Statistics, MCP
+Emerging Technologies: AI Concepts, Machine Learning, Data Science, 
+                      Data Visualization, Statistics, MCP
 Cloud Platforms: Microsoft Azure, Google Cloud, AWS
 Tools: Git, GitHub, VS Code, Microsoft 365
 Libraries: Pandas, NumPy, scikit-learn, Matplotlib
@@ -297,6 +306,7 @@ Available upon request.`;
             z-index: 9999;
             font-weight: 500;
             animation: slideUp 0.3s ease;
+            cursor: default;
         `;
         notification.textContent = message;
         document.body.appendChild(notification);
@@ -307,7 +317,6 @@ Available upon request.`;
         }, 3000);
     }
     
-    // Add animation styles
     const style = document.createElement('style');
     style.textContent = `
         @keyframes slideUp {
@@ -432,7 +441,7 @@ Available upon request.`;
     }
     
     // ============================================
-    // PROJECT FILTERS
+    // PROJECT FILTERS - Only one active at a time
     // ============================================
     const projectFilterBtns = document.querySelectorAll('.projects .filter-btn');
     const projectsGrid = document.querySelector('.projects-grid');
@@ -491,14 +500,13 @@ Available upon request.`;
     }
     
     // ============================================
-    // PROJECT CARD CLICKS - Navigate to detail page
+    // PROJECT CARD CLICKS
     // ============================================
     document.querySelectorAll('.project-card').forEach(card => {
         const detailLink = card.querySelector('a[href*="project-detail.html"]');
         if (detailLink) {
             card.style.cursor = 'pointer';
             card.addEventListener('click', function(e) {
-                // Only navigate if user didn't click on a specific link
                 if (!e.target.closest('a')) {
                     window.location.href = detailLink.getAttribute('href');
                 }
@@ -510,6 +518,7 @@ Available upon request.`;
     // CONTACT CARD CLICKS (Copy to clipboard)
     // ============================================
     document.querySelectorAll('.contact-card').forEach(card => {
+        card.style.cursor = 'pointer';
         card.addEventListener('click', (e) => {
             if (e.target.closest('a')) return;
             
