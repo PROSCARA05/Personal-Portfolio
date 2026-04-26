@@ -219,6 +219,7 @@ Phone: 061 958 3664
 Location: Thembisa, 1632, South Africa
 LinkedIn: linkedin.com/in/karabo-nkadimeng
 GitHub: github.com/PROSCARA05
+Portfolio: proscara05.github.io
 
 PROFESSIONAL SUMMARY
 --------------------
@@ -231,9 +232,6 @@ EDUCATION
 2024 - 2026: Bachelor of Science in Information Technology
              (Emerging Technologies)
              Richfield Graduate Institute of Technology
-             Key Modules: AI & ML, Statistics for Data Science,
-             Data Manipulation & Visualization, Data Science Fundamentals,
-             Cloud Computing
 
 2023: Higher Certificate in Information Technology
       Richfield Graduate Institute of Technology
@@ -248,24 +246,34 @@ Web Development: HTML5, CSS3, Responsive Design
 Emerging Technologies: AI Concepts, Machine Learning, Data Science, 
                       Data Visualization, Statistics, MCP
 Cloud Platforms: Microsoft Azure, Google Cloud, AWS
-Tools: Git, GitHub, VS Code, Microsoft 365
+Tools: Git, GitHub, VS Code, Microsoft 365, WordPress
 Libraries: Pandas, NumPy, scikit-learn, Matplotlib
 
 EXPERIENCE
 ----------
 Dec 2023 - Feb 2024: Web Development Intern
                      GAO Tek Inc
-                     • Developed and maintained web pages using HTML, CSS, JavaScript
-                     • Participated in debugging and testing processes
-                     • Collaborated with team members on project improvements
+                     • Managed and updated web content using WordPress
+                     • Inserted and formatted images for web pages
+                     • Edited and proofread website paragraphs and content
+                     • Managed hyperlinks and ensured proper linking across pages
 
 PROJECTS
 --------
-1. Python Data Handling Suite (3-in-1)
-2. Financial Risk Prediction Model (AI/ML)
-3. Personal Portfolio Website (Live)
+1. Python Data Handling Suite
+   github.com/PROSCARA05/Python-Data-Handling-Projects
+
+2. Financial Risk Prediction Model
+   github.com/PROSCARA05/Financial-Risk-Prediction-Model
+
+3. Personal Portfolio Website
+   proscara05.github.io
+
 4. C++ Calculator Application
+   github.com/PROSCARA05/C-Calculator-Application
+
 5. TMF Judicators Choral System (In Progress)
+   proscara05.github.io/TMF-Judicators-Choral-System
 
 LANGUAGES
 ---------
