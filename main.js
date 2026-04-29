@@ -251,7 +251,7 @@ Libraries: Pandas, NumPy, scikit-learn, Matplotlib
 
 EXPERIENCE
 ----------
-Dec 2023 - Feb 2024: Web Development Intern
+Jan 2023 - Mar 2023: Web Development Intern
                      GAO Tek Inc
                      • Managed and updated web content using WordPress
                      • Inserted and formatted images for web pages
