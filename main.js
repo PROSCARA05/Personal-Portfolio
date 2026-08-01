@@ -2,7 +2,7 @@
 // WAIT FOR DOM TO LOAD
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('%c👋 Welcome to Karabo Nkadimeng\'s Portfolio!', 'color: #2563eb; font-size: 16px; font-weight: bold;');
+    console.log('%c Welcome to Karabo Nkadimeng\'s Portfolio!', 'color: #2563eb; font-size: 16px; font-weight: bold;');
     
     // ============================================
     // TYPING ANIMATION
@@ -523,20 +523,54 @@ Available upon request.`;
     });
     
     // ============================================
-    // CONTACT CARD CLICKS (Copy to clipboard)
+    // CONTACT CARD CLICKS - Action-based navigation
     // ============================================
     document.querySelectorAll('.contact-card').forEach(card => {
         card.style.cursor = 'pointer';
-        card.addEventListener('click', (e) => {
-            if (e.target.closest('a')) return;
+        card.addEventListener('click', function(e) {
+            const action = this.getAttribute('data-action');
+            const textElement = this.querySelector('p');
             
-            const text = card.querySelector('p')?.textContent;
-            if (text && navigator.clipboard) {
-                navigator.clipboard.writeText(text).then(() => {
-                    showNotification('📋 Copied to clipboard!');
-                }).catch(err => {
-                    console.error('Failed to copy: ', err);
-                });
+            if (!textElement) return;
+            
+            const text = textElement.textContent.trim();
+            
+            switch(action) {
+                case 'phone':
+                    // Open phone dialer
+                    const phoneNumber = text.replace(/\s/g, ''); // Remove spaces
+                    window.location.href = `tel:+27${phoneNumber.substring(1)}`; // Format for South Africa
+                    break;
+                    
+                case 'email':
+                    // Open email client
+                    window.location.href = `mailto:${text}`;
+                    break;
+                    
+                case 'linkedin':
+                    // Open LinkedIn profile
+                    let linkedinUrl = text;
+                    if (!linkedinUrl.startsWith('http')) {
+                        linkedinUrl = `https://${linkedinUrl}`;
+                    }
+                    window.open(linkedinUrl, '_blank');
+                    break;
+                    
+                case 'map':
+                    // Open Google Maps with location
+                    const location = encodeURIComponent('Thembisa, 1632, South Africa');
+                    window.open(`https://www.google.com/maps/search/${location}`, '_blank');
+                    break;
+                    
+                default:
+                    // Fallback: copy to clipboard for non-action cards
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(text).then(() => {
+                            showNotification('Copied to clipboard!');
+                        }).catch(err => {
+                            console.error('Failed to copy: ', err);
+                        });
+                    }
             }
         });
     });
@@ -552,7 +586,7 @@ Available upon request.`;
             konamiIndex++;
             if (konamiIndex === konamiCode.length) {
                 document.body.classList.add('rainbow');
-                console.log('%c🎉 KONAMI CODE ACTIVATED! 🎉', 'color: gold; font-size: 16px; font-weight: bold;');
+                console.log('% cKONAMI CODE ACTIVATED! ', 'color: gold; font-size: 16px; font-weight: bold;');
                 setTimeout(() => document.body.classList.remove('rainbow'), 2000);
                 konamiIndex = 0;
             }
@@ -561,5 +595,5 @@ Available upon request.`;
         }
     });
     
-    console.log("%c🎮 Try typing the Konami Code (↑ ↑ ↓ ↓ ← → ← → B A)!", "color: #fbbf24; font-size: 12px;");
+    console.log("%c Try typing the Konami Code (↑ ↑ ↓ ↓ ← → ← → B A)!", "color: #fbbf24; font-size: 12px;");
 });
