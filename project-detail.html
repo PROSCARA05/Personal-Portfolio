@@ -80,6 +80,41 @@
         </div>
     </main>
 
+    <!-- Quick Contact Section -->
+    <section id="contact" class="contact" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+                <div class="title-divider"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="contact-card" data-action="map">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Location</h3>
+                        <p>Thembisa, 1632<br>South Africa</p>
+                    </div>
+                    <div class="contact-card" data-action="phone">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>061 958 3664</p>
+                    </div>
+                    <div class="contact-card" data-action="email">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>knkadimeng511@gmail.com</p>
+                    </div>
+                    <div class="contact-card" data-action="linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <h3>LinkedIn</h3>
+                        <p>linkedin.com/in/karabo-nkadimeng</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -172,6 +207,43 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+        });
+        
+        // Contact Card Actions
+        document.querySelectorAll('.contact-card[data-action]').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function(e) {
+                const action = this.getAttribute('data-action');
+                const textElement = this.querySelector('p');
+                
+                if (!textElement) return;
+                
+                const text = textElement.textContent.trim();
+                
+                switch(action) {
+                    case 'phone':
+                        const phoneNumber = text.replace(/\s/g, '');
+                        window.location.href = `tel:+27${phoneNumber.substring(1)}`;
+                        break;
+                        
+                    case 'email':
+                        window.location.href = `mailto:${text}`;
+                        break;
+                        
+                    case 'linkedin':
+                        let linkedinUrl = text;
+                        if (!linkedinUrl.startsWith('http')) {
+                            linkedinUrl = `https://${linkedinUrl}`;
+                        }
+                        window.open(linkedinUrl, '_blank');
+                        break;
+                        
+                    case 'map':
+                        const location = encodeURIComponent('Thembisa, 1632, South Africa');
+                        window.open(`https://www.google.com/maps/search/${location}`, '_blank');
+                        break;
+                }
+            });
         });
         
         // Project Data
