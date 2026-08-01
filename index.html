@@ -56,7 +56,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <span class="greeting">👋 Hello, I'm</span>
+                    <span class="greeting"> Good day, I'm</span>
                     <h1 class="hero-title">Karabo Nkadimeng</h1>
                     <div class="typed-container">
                         <span class="typed-text"></span>
@@ -456,22 +456,29 @@
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-card">
+                    <!-- Location Card - Opens Google Maps -->
+                    <div class="contact-card" data-action="map">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Location</h3>
                         <p>Thembisa, 1632<br>South Africa</p>
                     </div>
-                    <div class="contact-card">
+                    
+                    <!-- Phone Card - Opens dialer -->
+                    <div class="contact-card" data-action="phone">
                         <i class="fas fa-phone"></i>
                         <h3>Phone</h3>
                         <p>061 958 3664</p>
                     </div>
-                    <div class="contact-card">
+                    
+                    <!-- Email Card - Opens email client -->
+                    <div class="contact-card" data-action="email">
                         <i class="fas fa-envelope"></i>
                         <h3>Email</h3>
                         <p>knkadimeng511@gmail.com</p>
                     </div>
-                    <div class="contact-card">
+                    
+                    <!-- LinkedIn Card - Opens LinkedIn profile -->
+                    <div class="contact-card" data-action="linkedin">
                         <i class="fab fa-linkedin"></i>
                         <h3>LinkedIn</h3>
                         <p>linkedin.com/in/karabo-nkadimeng</p>
@@ -525,12 +532,12 @@
             formElement: '#contact-form', 
             formId: 'xyklkybb',
             onSuccess: function() {
-                document.getElementById('form-message').innerHTML = '<div class="success-message">✅ Thank you! Your message has been sent successfully. I\'ll get back to you soon!</div>';
+                document.getElementById('form-message').innerHTML = '<div class="success-message"> Thank you! Your message has been sent successfully. I\'ll get back to you soon!</div>';
                 document.getElementById('contact-form').reset();
             },
             onError: function(errors) {
                 console.error('Form errors:', errors);
-                document.getElementById('form-message').innerHTML = '<div class="error-message">❌ Oops! Something went wrong. Please try again or email me directly at knkadimeng511@gmail.com</div>';
+                document.getElementById('form-message').innerHTML = '<div class="error-message"> Oops! Something went wrong. Please try again or email me directly at knkadimeng511@gmail.com</div>';
             }
         });
     </script>
